@@ -1,0 +1,1571 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+*, a, input, select, textarea, button {
+    font-family: 'Lato', sans-serif;
+}
+
+.btn {
+    display: block;
+    padding: 13px 0 14px;
+    background: #dc0000;
+    border: none;
+    box-shadow: 0 4px 12px rgba(220, 0, 0, 0.1);
+    border-radius: 64px;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 13px;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover, &:focus, &:active {
+        background: #9e0101;
+    }
+
+    @media (min-width: 2560px) {
+        font-size: 17px;
+        padding: 17px 0 16px;
+    }
+
+    @media (min-width: 3840px) {
+        font-size: 26px;
+        padding: 22px 0 28px;
+        border-radius: 128px;
+    }
+}
+
+.perfect {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 100000;
+
+    img {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+        width: 100vw;
+        height: auto;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+
+    header {
+        .header_wrapper {
+            width: 247px;
+
+            .logo {
+                a {
+                    display: block;
+                    text-decoration: none;
+                    padding: 70px 72px 43px 73px;
+
+                    img {
+                        display: block;
+                        width: 102px;
+                        height: 62px;
+                        transition: opacity 0.2s;
+                    }
+
+                    &:hover {
+
+                        img {
+                            opacity: 0.7;
+                        }
+                    }
+                }
+            }
+
+            nav {
+                .header_menu {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    border-top: 1px solid rgba(0, 0, 0, 0.14);
+
+                    li {
+                        a {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 41px 0 29px;
+                            text-decoration: none;
+                            font-family: 'Lato', sans-serif;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 13px;
+                            line-height: 16px;
+                            letter-spacing: 0.7px;
+                            color: #000000;
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+                            border-left: 3px solid transparent;
+                            transition: all 0.2s;
+
+                            img {
+                                display: block;
+                                width: 25px;
+                                margin-bottom: 19px;
+                                opacity: 0.3;
+                                transition: opacity 0.2s;
+                            }
+
+                            &.decor {
+                                position: relative;
+
+                                &:before {
+                                    content: '';
+                                    display: block;
+                                    position: absolute;
+                                    top: 34px;
+                                    right: 104px;
+                                    background: #dc0000;
+                                    width: 5px;
+                                    height: 5px;
+                                    border-radius: 50%;
+                                }
+                            }
+
+                            &:hover {
+                                border-left: 3px solid #dc0000;
+                                background: #f5f5f5;
+
+                                img {
+                                    opacity: 1;
+                                }
+                            }
+
+                            &.active {
+                                border-left: 3px solid #dc0000;
+
+                                img {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 2560px) {
+            .header_wrapper {
+                width: 330px;
+
+                .logo {
+                    a {
+                        display: block;
+                        text-decoration: none;
+                        padding: 94px 92px 56px 97px;
+
+                        img {
+                            width: 138px;
+                            height: 84px;
+                        }
+                    }
+                }
+
+                nav {
+                    .header_menu {
+                        li {
+                            a {
+                                padding: 50px 0 39px;
+                                font-size: 17px;
+                                line-height: normal;
+                                letter-spacing: 0.7px;
+
+                                img {
+                                    display: block;
+                                    width: 32px;
+                                    margin-bottom: 31px;
+
+                                }
+
+                                &.decor {
+                                    &:before {
+                                        top: 44px;
+                                        right: 138px;
+                                        width: 7px;
+                                        height: 7px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 3840px) {
+            .header_wrapper {
+                width: 495px;
+
+                .logo {
+                    a {
+                        display: block;
+                        text-decoration: none;
+                        padding: 142px 144px 85px 146px;
+
+                        img {
+                            width: 204px;
+                            height: 124px;
+                        }
+                    }
+                }
+
+                nav {
+                    .header_menu {
+                        border-top: 2px solid rgba(0, 0, 0, .14);
+
+                        li {
+                            a {
+                                padding: 75px 0 59px;
+                                font-size: 26px;
+                                line-height: normal;
+                                letter-spacing: 0.7px;
+                                border-bottom: 2px solid rgba(0, 0, 0, .14);
+
+                                img {
+                                    display: block;
+                                    width: 48px;
+                                    margin-bottom: 46px;
+                                }
+
+                                &.decor {
+                                    &:before {
+                                        top: 67px;
+                                        right: 208px;
+                                        width: 10px;
+                                        height: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .main {
+        width: calc(100% - 247px);
+        height: 100vh;
+        background: linear-gradient(0deg, #eaeaea, #eaeaea);
+        border-radius: 44px;
+        padding: 51px 46px 45px;
+
+        .main_content_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+
+            .main_content_item_left {
+                margin-right: 32px;
+
+                .title {
+                    margin: 0;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 16px;
+                    line-height: normal;
+                    text-transform: uppercase;
+                    color: #000000;
+
+                }
+
+                .user_info {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding-top: 19px;
+
+                    .user_avatar {
+                        width: 53px;
+                        height: 53px;
+                        border-radius: 50%;
+                        margin-right: 18px;
+
+                        img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .user_name {
+                        span {
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 23px;
+                            color: #000000;
+                            letter-spacing: 0.6px;
+                        }
+                    }
+                }
+
+                .release_carousel {
+                    width: 536px;
+                    position: relative;
+
+                    img {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    .slick-arrow {
+                        border: none;
+                        outline: none;
+                        width: 31px;
+                        height: 31px;
+                        background: #ffffff;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 32px;
+                        text-align: center;
+                        z-index: 5;
+
+                        .fa {
+                            color: #636c78;
+                            font-size: 15px;
+                        }
+
+                        &.slick-prev {
+                            right: 66px;
+
+                        }
+
+                        &.slick-next {
+                            right: 22px;
+                        }
+                    }
+                }
+
+                .session_info {
+                    background: #ffffff;
+                    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.04);
+                    border-radius: 20px;
+                    padding: 33px 29px 30px 32px;
+                    margin: 59px 0 28px;
+
+                    .session_info_time_wrapper {
+                        margin-top: 53px;
+
+                        .session_info_time {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-bottom: 28px;
+
+                            span {
+                                font-style: normal;
+                                font-weight: 300;
+                                font-size: 15px;
+                                line-height: normal;
+                                color: #000000;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .main_content_item_middle {
+                margin-right: 46px;
+
+                .title {
+                    margin: 0;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 16px;
+                    line-height: normal;
+                    text-transform: uppercase;
+                    color: #000000;
+
+                }
+
+                .status_info {
+                    background: #fefefe;
+                    border-radius: 16px;
+                    padding: 17px 28px 13px 28px;
+
+                    .status_info_item {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin: 10px 0 15px;
+
+                        span {
+                            font-style: normal;
+                            font-weight: 300;
+                            font-size: 15px;
+                            line-height: normal;
+                            color: #000000;
+
+                            &.status_type {
+                                font-weight: 700;
+                                text-transform: uppercase;
+
+                            }
+
+                            &.status_timer {
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+
+                .balance_info {
+                    background: #ffffff;
+                    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.04);
+                    border-radius: 20px;
+                    padding: 32px 26px 30px 28px;
+                    margin: 22px 0 31px;
+
+                    .balance_info_item_top {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        a.balance_update {
+                            display: block;
+                            text-decoration: none;
+
+                            img {
+                                display: block;
+                                transition: opacity 0.2s;
+                            }
+
+                            &:hover img {
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+
+                    .balance_info_item_bottom {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        margin: 17px 0 34px;
+
+                        .balance {
+                            margin-right: 17px;
+                            font-style: normal;
+                            font-weight: 900;
+                            font-size: 34px;
+                            line-height: normal;
+                            letter-spacing: 1.8px;
+                            color: #000000;
+                        }
+
+                        .bonus_balance {
+                            background: rgba(0, 0, 0, 0.09);
+                            border-radius: 11px;
+                            padding: 6px 18px 11px;
+
+                            span {
+                                font-style: normal;
+                                font-weight: 900;
+                                font-size: 15px;
+                                line-height: 22px;
+                                color: #000000;
+                            }
+
+                            .fa {
+                                font-weight: 500;
+                                font-size: 15px;
+                            }
+
+                            p {
+                                margin: 0;
+                                font-style: normal;
+                                font-weight: 100;
+                                font-size: 9px;
+                                line-height: 12px;
+                                color: #000000;
+                            }
+                        }
+                    }
+                }
+
+                .tournament_carousel {
+                    width: 536px;
+                    position: relative;
+
+                    img {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    .slick-arrow {
+                        border: none;
+                        outline: none;
+                        width: 31px;
+                        height: 31px;
+                        background: #ffffff;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 32px;
+                        text-align: center;
+                        z-index: 5;
+
+                        .fa {
+                            color: #636c78;
+                            font-size: 15px;
+                        }
+
+                        &.slick-prev {
+                            right: 66px;
+
+                        }
+
+                        &.slick-next {
+                            right: 22px;
+                        }
+                    }
+                }
+            }
+
+            .main_content_item_right {
+                .tariffs_info {
+                    background: linear-gradient(162.3deg, #3d3d3d -12.88%, #434343 51.15%, #606060 108.84%);
+                    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.04);
+                    border-radius: 26px;
+                    padding: 34px 33px;
+                    height: 100%;
+
+                    .tariffs_info_title {
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 15px;
+                        line-height: normal;
+                        text-transform: uppercase;
+                        color: #ffffff;
+                    }
+
+                    .tariffs_info_list {
+                        margin-top: 37px;
+                        border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+                        .tariffs_info_item {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 26px 0 34px;
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+                            .position {
+                                margin-right: 130px;
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 13px;
+                                line-height: normal;
+                                color: #ffffff;
+                                opacity: 0.8;
+                            }
+
+                            .price {
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 17px;
+                                line-height: normal;
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .main_bottom_menu_wrapper {
+            margin-top: 38px;
+
+            .main_bottom_menu {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: stretch;
+
+                li {
+                    a {
+                        width: 280px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        text-decoration: none;
+                        padding: 33px 30px 35px;
+                        box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.04);
+                        border-radius: 22px;
+                        transition: box-shadow 0.2s;
+
+                        span {
+                            font-style: normal;
+                            font-weight: bold;
+                            font-size: 14px;
+                            line-height: normal;
+                            letter-spacing: 0.01em;
+                            text-transform: uppercase;
+                            color: #000000;
+                        }
+
+                        img {
+                            display: block;
+                            margin-bottom: 29px;
+                        }
+
+                        &.back {
+                            background: #f7fbff;
+                        }
+
+                        &.select_game {
+                            background: #f8f0ff;
+                        }
+
+                        &.problem_report {
+                            background: #fffeee;
+                        }
+
+                        &.session {
+                            background: #f0fff9;
+                        }
+
+                        &.logout {
+                            background: #ffeded;
+                        }
+
+                        &:hover {
+                            box-shadow: 0 0 15px #9c9c9c;
+                        }
+                    }
+                }
+            }
+        }
+
+        .main_signature {
+            margin-top: 54px;
+            text-align: right;
+
+            span {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: normal;
+                color: #000000;
+
+                &.upper {
+                    text-transform: uppercase;
+                    font-weight: 900;
+
+                }
+            }
+        }
+
+        .transactions_top_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            .transactions_title_wrapper {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                margin-right: 710px;
+
+                a.back {
+                    display: block;
+                    margin-right: 48px;
+                }
+
+                .title {
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 23px;
+                    line-height: normal;
+                    color: #000000;
+                    letter-spacing: 1.2px;
+                }
+            }
+
+            .transactions_sort_filter_wrapper {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: stretch;
+                margin-top: 12px;
+
+                a {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    text-decoration: none;
+                    padding: 11px 15px 7px 13px;
+                    background: #ffffff;
+                    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.04);
+                    border-radius: 8px;
+
+                    span {
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 11px;
+                        line-height: 20px;
+                        letter-spacing: 0.2px;
+                        text-transform: uppercase;
+                        color: #000000;
+                    }
+
+                    img {
+                        display: block;
+                        margin-right: 12px;
+                    }
+
+                    &.sort {
+                        margin-right: 18px;
+                    }
+                }
+            }
+        }
+
+        .transactions_main_content_wrapper {
+            margin-top: 83px;
+
+            .transactions_info_wrapper {
+                width: 1293px;
+                margin: 0 auto 0 0;
+                max-height: calc(100vh - 230px);
+                overflow: auto;
+                background: #ffffff;
+                box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.04);
+                border-radius: 20px;
+
+                table.transactions_info {
+                    width: 100%;
+                    border: none;
+                    border-collapse: collapse;
+
+                    thead {
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+
+                        tr {
+                            th {
+                                padding: 30px 20px 25px;
+                                font-family: 'Lato', sans-serif;
+                                font-style: normal;
+                                font-weight: 300;
+                                font-size: 12px;
+                                line-height: 1.3;
+                                text-transform: uppercase;
+                                color: #000000;
+                                opacity: 0.6;
+                            }
+                        }
+                    }
+
+                    tbody {
+
+                        tr {
+                            td {
+                                padding: 33px 20px;
+                                font-family: 'Lato', sans-serif;
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 13px;
+                                line-height: 1.3;
+                                color: #000000;
+                                text-align: center;
+
+                                .tariff {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    img {
+                                        display: block;
+                                        margin-right: 8px;
+                                    }
+                                }
+
+                                &:nth-child(1) {
+                                    width: 95px;
+                                }
+
+                                &:nth-child(2) {
+                                    width: 200px;
+                                }
+                            }
+
+                            &:first-child td {
+                                padding-top: 43px;
+                            }
+
+                            &:last-child td {
+                                padding-bottom: 55px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 2560px) {
+            width: calc(100% - 330px);
+            height: 100vh;
+            border-radius: 58px;
+            padding: 66px 60px 60px;
+
+            .main_content_wrapper {
+                .main_content_item_left {
+                    margin-right: 44px;
+
+                    .title {
+                        font-size: 21px;
+                    }
+
+                    .user_info {
+                        padding-top: 28px;
+
+                        .user_avatar {
+                            width: 70px;
+                            height: 70px;
+                            margin-right: 25px;
+                        }
+
+                        .user_name {
+                            span {
+                                font-size: 24px;
+                                line-height: normal;
+                                letter-spacing: 0.8px;
+                            }
+                        }
+                    }
+
+                    .release_carousel {
+                        width: 714px;
+
+                        .slick-arrow {
+                            width: 45px;
+                            height: 45px;
+                            top: 36px;
+
+                            .fa {
+                                font-size: 17px;
+                            }
+
+                            &.slick-prev {
+                                right: 84px;
+
+                            }
+
+                            &.slick-next {
+                                right: 22px;
+                            }
+                        }
+                    }
+
+                    .session_info {
+                        border-radius: 26px;
+                        padding: 42px 37px 35px 44px;
+                        margin: 80px 0 40px;
+
+                        .session_info_time_wrapper {
+                            margin-top: 70px;
+
+                            .session_info_time {
+                                margin-bottom: 39px;
+
+                                span {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .main_content_item_middle {
+                    margin-right: 62px;
+
+                    .title {
+                        font-size: 21px;
+                    }
+
+                    .status_info {
+                        border-radius: 22px;
+                        padding: 27px 37px 16px 39px;
+
+                        .status_info_item {
+                            margin: 10px 0 19px;
+
+                            span {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+
+                    .balance_info {
+                        border-radius: 26px;
+                        padding: 47px 36px 40px 35px;
+                        margin: 33px 0 41px;
+
+                        .balance_info_item_top {
+
+                            a.balance_update {
+                                display: block;
+                                text-decoration: none;
+
+                                img {
+                                    display: block;
+                                    transition: opacity 0.2s;
+                                }
+
+                                &:hover img {
+                                    opacity: 0.7;
+                                }
+                            }
+                        }
+
+                        .balance_info_item_bottom {
+                            margin: 30px 0 42px;
+
+                            .balance {
+                                margin-right: 17px;
+                                font-size: 45px;
+                                letter-spacing: 2.8px;
+                            }
+
+                            .bonus_balance {
+                                background: rgba(0, 0, 0, 0.09);
+                                border-radius: 11px;
+                                padding: 11px 28px 11px;
+
+                                span {
+                                    font-size: 20px;
+                                    line-height: 29px;
+                                }
+
+                                .fa {
+                                    font-size: 20px;
+                                }
+
+                                p {
+                                    font-size: 12px;
+                                    line-height: 16px;
+                                }
+                            }
+                        }
+                    }
+
+                    .tournament_carousel {
+                        width: 714px;
+
+                        .slick-arrow {
+                            width: 45px;
+                            height: 45px;
+                            top: 36px;
+
+                            .fa {
+                                font-size: 17px;
+                            }
+
+                            &.slick-prev {
+                                right: 87px;
+
+                            }
+
+                            &.slick-next {
+                                right: 28px;
+                            }
+                        }
+                    }
+                }
+
+                .main_content_item_right {
+                    .tariffs_info {
+                        border-radius: 34px;
+                        padding: 47px 43px;
+                        height: 100%;
+
+                        .tariffs_info_title {
+                            font-size: 20px;
+                        }
+
+                        .tariffs_info_list {
+                            margin-top: 48px;
+
+                            .tariffs_info_item {
+                                padding: 36px 0 45px;
+
+                                .position {
+                                    margin-right: 182px;
+                                    font-size: 17px;
+                                }
+
+                                .price {
+                                    font-size: 22px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .main_bottom_menu_wrapper {
+                margin-top: 53px;
+
+                .main_bottom_menu {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: stretch;
+
+                    li {
+                        a {
+                            width: 373px;
+                            padding: 39px 30px 43px;
+                            border-radius: 30px;
+
+                            span {
+                                font-size: 18px;
+                                letter-spacing: 0.01em;
+                            }
+
+                            img {
+                                width: 50px;
+                                height: 50px;
+                                display: block;
+                                margin-bottom: 42px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .main_signature {
+                margin-top: 78px;
+                margin-right: 36px;
+
+                span {
+                    font-size: 20px;
+                }
+
+                img {
+                    display: inline-block;
+                    width: 100px;
+                    height: auto;
+                }
+            }
+
+            .transactions_top_wrapper {
+                .transactions_title_wrapper {
+                    margin-right: 947px;
+
+                    a.back {
+                        display: block;
+                        margin-right: 61px;
+
+                        img {
+                            width: 34px;
+                            height: 21px;
+                        }
+                    }
+
+                    .title {
+                        font-size: 30px;
+                        letter-spacing: 1.8px;
+                    }
+                }
+
+                .transactions_sort_filter_wrapper {
+                    margin-top: 19px;
+
+                    a {
+                        padding: 11px 24px 8px 19px;
+                        border-radius: 10px;
+
+                        span {
+                            font-size: 15px;
+                            line-height: 27px;
+                            letter-spacing: 0.2px;
+                        }
+
+                        img {
+                            display: block;
+                            margin-right: 17px;
+                        }
+
+                        &.sort {
+                            margin-right: 24px;
+                        }
+                    }
+                }
+            }
+
+            .transactions_main_content_wrapper {
+                margin-top: 113px;
+
+                .transactions_info_wrapper {
+                    width: 1724px;
+                    margin: 0 auto 0 0;
+                    max-height: calc(100vh - 280px);
+                    overflow: auto;
+                    background: #ffffff;
+                    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.04);
+                    border-radius: 27px;
+
+                    table.transactions_info {
+                        width: 100%;
+                        border: none;
+                        border-collapse: collapse;
+
+                        thead {
+
+                            tr {
+                                th {
+                                    padding: 40px 20px 35px;
+                                    font-size: 16px;
+                                    line-height: 1.3;
+                                }
+                            }
+                        }
+
+                        tbody {
+                            tr {
+                                td {
+                                    padding: 44px 20px;
+                                    font-size: 17px;
+                                    line-height: 1.3;
+
+                                    .tariff {
+
+                                        img {
+                                            display: block;
+                                            width: 19px;
+                                            height: 19px;
+                                            margin-right: 8px;
+                                        }
+                                    }
+
+                                    &:nth-child(1) {
+                                        width: 130px;
+                                    }
+
+                                    &:nth-child(2) {
+                                        width: 260px;
+                                    }
+                                }
+
+                                &:first-child td {
+                                    padding-top: 59px;
+                                }
+
+                                &:last-child td {
+                                    padding-bottom: 75px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 3840px) {
+            width: calc(100% - 495px);
+            height: 100vh;
+            border-radius: 58px;
+            padding: 100px 92px 90px;
+
+            .main_content_wrapper {
+                .main_content_item_left {
+                    margin-right: 64px;
+
+                    .title {
+                        font-size: 32px;
+                    }
+
+                    .user_info {
+                        padding-top: 42px;
+
+                        .user_avatar {
+                            width: 106px;
+                            height: 106px;
+                            margin-right: 30px;
+                        }
+
+                        .user_name {
+                            span {
+                                font-size: 36px;
+                                line-height: normal;
+                                letter-spacing: 0.8px;
+                            }
+                        }
+                    }
+
+                    .release_carousel {
+                        width: 1072px;
+
+                        .slick-arrow {
+                            width: 62px;
+                            height: 62px;
+                            top: 66px;
+
+                            .fa {
+                                font-size: 25px;
+                            }
+
+                            &.slick-prev {
+                                right: 130px;
+
+                            }
+
+                            &.slick-next {
+                                right: 40px;
+                            }
+                        }
+                    }
+
+                    .session_info {
+                        border-radius: 40px;
+                        padding: 66px 58px 55px 64px;
+                        margin: 116px 0 52px;
+
+                        .session_info_time_wrapper {
+                            margin-top: 105px;
+
+                            .session_info_time {
+                                margin-bottom: 58px;
+
+                                span {
+                                    font-size: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .main_content_item_middle {
+                    margin-right: 92px;
+
+                    .title {
+                        font-size: 32px;
+                    }
+
+                    .status_info {
+                        border-radius: 32px;
+                        padding: 47px 57px 26px 56px;
+
+                        .status_info_item {
+                            margin: 10px 0 29px;
+
+                            span {
+                                font-size: 30px;
+                            }
+                        }
+                    }
+
+                    .balance_info {
+                        border-radius: 40px;
+                        padding: 64px 49px 59px 54px;
+                        margin: 45px 0 57px;
+
+                        .balance_info_item_top {
+
+                            a.balance_update {
+                                display: block;
+                                text-decoration: none;
+
+                                img {
+                                    display: block;
+                                    width: 53px;
+                                    transition: opacity 0.2s;
+                                }
+
+                                &:hover img {
+                                    opacity: 0.7;
+                                }
+                            }
+                        }
+
+                        .balance_info_item_bottom {
+                            margin: 36px 0 69px;
+
+                            .balance {
+                                margin-right: 30px;
+                                font-size: 68px;
+                                letter-spacing: 3.8px;
+                            }
+
+                            .bonus_balance {
+                                background: rgba(0, 0, 0, 0.09);
+                                border-radius: 11px;
+                                padding: 14px 37px 13px;
+
+                                span {
+                                    font-size: 30px;
+                                    line-height: 44px;
+                                }
+
+                                .fa {
+                                    font-size: 30px;
+                                }
+
+                                p {
+                                    font-size: 18px;
+                                    line-height: 24px;
+                                }
+                            }
+                        }
+                    }
+
+                    .tournament_carousel {
+                        width: 1072px;
+
+                        .slick-arrow {
+                            width: 62px;
+                            height: 62px;
+                            top: 60px;
+
+                            .fa {
+                                font-size: 25px;
+                            }
+
+                            &.slick-prev {
+                                right: 137px;
+                            }
+
+                            &.slick-next {
+                                right: 46px;
+                            }
+                        }
+                    }
+                }
+
+                .main_content_item_right {
+                    .tariffs_info {
+                        border-radius: 52px;
+                        padding: 69px 66px;
+                        height: 100%;
+
+                        .tariffs_info_title {
+                            font-size: 30px;
+                        }
+
+                        .tariffs_info_list {
+                            margin-top: 73px;
+
+                            .tariffs_info_item {
+                                padding: 55px 0 69px;
+
+                                .position {
+                                    margin-right: 262px;
+                                    font-size: 26px;
+                                }
+
+                                .price {
+                                    font-size: 34px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .main_bottom_menu_wrapper {
+                margin-top: 87px;
+
+                .main_bottom_menu {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: stretch;
+
+                    li {
+                        a {
+                            width: 560px;
+                            padding: 61px 30px 61px;
+                            border-radius: 44px;
+
+                            span {
+                                font-size: 28px;
+                                letter-spacing: 0.04em;
+                            }
+
+                            img {
+                                width: 73px;
+                                height: auto;
+                                display: block;
+                                margin-bottom: 58px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .main_signature {
+                margin-top: 120px;
+                margin-right: 56px;
+
+                span {
+                    font-size: 30px;
+                }
+
+                img {
+                    display: inline-block;
+                    width: 150px;
+                    height: auto;
+                    margin: 0 10px;
+                }
+            }
+
+            .transactions_top_wrapper {
+                .transactions_title_wrapper {
+                    margin-right: 1427px;
+
+                    a.back {
+                        display: block;
+                        margin-right: 96px;
+
+                        img {
+                            width: 46px;
+                            height: 30px;
+                        }
+                    }
+
+                    .title {
+                        font-size: 46px;
+                        letter-spacing: 2px;
+                    }
+                }
+
+                .transactions_sort_filter_wrapper {
+                    margin-top: 29px;
+
+                    a {
+                        padding: 18px 44px 11px 26px;
+                        border-radius: 16px;
+
+                        span {
+                            font-size: 22px;
+                            line-height: 40px;
+                            letter-spacing: 0.2px;
+                        }
+
+                        img {
+                            display: block;
+                            width: 35px;
+                            margin-right: 17px;
+                        }
+
+                        &.sort {
+                            margin-right: 36px;
+                        }
+                    }
+                }
+            }
+
+            .transactions_main_content_wrapper {
+                margin-top: 166px;
+
+                .transactions_info_wrapper {
+                    width: 2586px;
+                    margin: 0 auto 0 0;
+                    max-height: calc(100vh - 400px);
+                    border-radius: 40px;
+
+                    table.transactions_info {
+                        thead {
+                            tr {
+                                th {
+                                    padding: 59px 20px 56px;
+                                    font-size: 24px;
+                                    line-height: 1.3;
+                                }
+                            }
+                        }
+
+                        tbody {
+                            tr {
+                                td {
+                                    padding: 67px 20px;
+                                    font-size: 26px;
+                                    line-height: 1.3;
+
+                                    .tariff {
+
+                                        img {
+                                            display: block;
+                                            width: 19px;
+                                            height: 19px;
+                                            margin-right: 8px;
+                                        }
+                                    }
+
+                                    &:nth-child(1) {
+                                        width: 200px;
+                                    }
+
+                                    &:nth-child(2) {
+                                        width: 400px;
+                                    }
+                                }
+
+                                &:first-child td {
+                                    padding-top: 59px;
+                                }
+
+                                &:last-child td {
+                                    padding-bottom: 108px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
