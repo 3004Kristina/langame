@@ -48,13 +48,13 @@
             <span class="upper">SOFTWARE</span>
         </div>
         <div class="time_ln">
-            <span class="ln" data-remodal-target="computer_locked_modal">EN</span>
+            <span class="ln">EN</span>
             <span id="clock"></span>
         </div>
     </div>
 </div>
 
-<div class="remodal sign_in_forgot_password_modal" data-remodal-id="forgot_password_modal">
+<div class="remodal sign_in_forgot_password_modal" data-remodal-id="forgot_password_modal" data-remodal-options="hashTracking: false">
     <button data-remodal-action="close" class="remodal-close"></button>
     <div class="remodal-content">
         <p class="title">Забыли пароль</p>
@@ -78,7 +78,7 @@
     </div>
 </div>
 
-<div class="remodal sign_in_code_recovery_modal" data-remodal-id="code_recovery_modal">
+<div class="remodal sign_in_code_recovery_modal" data-remodal-id="code_recovery_modal" data-remodal-options="hashTracking: false">
     <button data-remodal-action="close" class="remodal-close"></button>
     <div class="remodal-content">
         <p class="title">Код восстановления</p>
@@ -107,7 +107,7 @@
     </div>
 </div>
 
-<div class="remodal sign_in_set_new_password_modal" data-remodal-id="set_new_password_modal">
+<div class="remodal sign_in_set_new_password_modal" data-remodal-id="set_new_password_modal" data-remodal-options="hashTracking: false">
     <button data-remodal-action="close" class="remodal-close"></button>
     <div class="remodal-content">
         <p class="title">Восстановление пароля</p>
@@ -128,7 +128,7 @@
     </div>
 </div>
 
-<div class="remodal sign_in_computer_locked_modal" data-remodal-id="computer_locked_modal">
+<div class="remodal sign_in_computer_locked_modal" data-remodal-id="computer_locked_modal" data-remodal-options="hashTracking: false">
     <button data-remodal-action="close" class="remodal-close"></button>
     <div class="remodal-content">
         <p class="title">Компьютер заблокирован</p>
@@ -138,6 +138,16 @@
         <p class="instruction">
             Для авторизации на данном ПК
             обратитесь к администратору
+        </p>
+    </div>
+</div>
+
+<div class="remodal sign_in_success_modal" data-remodal-id="success_modal" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-content">
+        <p class="title">Успешно!</p>
+        <p class="instruction">
+            Ваш пароль был изменен, воспользуйтесь новым паролем для входа в систему.
         </p>
     </div>
 </div>

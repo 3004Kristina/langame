@@ -120,9 +120,9 @@ jQuery(function() {
             success: function() {
                 $form.closest('[data-remodal-id]').remodal().close();
 
-                // removeRemodalAnimation();
-                //
-                // jQuery('[data-remodal-id="code_recovery_modal"]').remodal().open();
+                removeRemodalAnimation();
+
+                jQuery('[data-remodal-id="success_modal"]').remodal().open();
             }
         });
     });
@@ -205,42 +205,6 @@ jQuery(function() {
     }
 
     CountDown();
-
-
-    // jQuery('#full-registration-form')
-    //     .validate({
-    //         validClass: "success",
-    //         focusCleanup: true,
-    //         rules: {
-    //             name: {
-    //                 required: true,
-    //                 minlength: 1
-    //             },
-    //             phone: {
-    //                 required: true,
-    //                 minlength: 11
-    //             },
-    //             password: {
-    //                 required: true,
-    //                 minlength: 6
-    //             },
-    //             birthday: {
-    //                 required: true,
-    //             },
-    //             passport: {
-    //                 required: true,
-    //                 minlength: 10
-    //             },
-    //         },
-    //
-    //         messages: {
-    //             name: '',
-    //             phone: 'Поле должно содержать 11 цифр',
-    //             birthday: '',
-    //             passport: 'Поле должно содержать 10 Символов',
-    //             password: 'Пароль должен быть не менее 6 символов'
-    //         }
-    //     });
 
     function removeRemodalAnimation() {
         jQuery('body').addClass('remodal-overlay-without-animation');

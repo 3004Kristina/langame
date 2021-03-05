@@ -1418,6 +1418,35 @@ html, body {
     }
 }
 
+.sign_in_success_modal{
+    width: 415px;
+    background: #ffffff;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.04);
+    border-radius: 22px;
+    padding: 30px 30px 50px;
+
+    .title{
+        margin: 30px 0 40px;
+        font-weight: 700;
+        font-size: 21px;
+        letter-spacing: 0.4px;
+        line-height: 1.2;
+        text-align: center;
+        color: #000000;
+    }
+
+    .instruction {
+        max-width: 287px;
+        margin: 0 auto;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 1.4;
+        text-align: center;
+        color: #000000;
+    }
+}
+
 /*! MODALS END */
 
 body .remodal-wrapper {
