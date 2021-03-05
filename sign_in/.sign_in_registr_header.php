@@ -25,11 +25,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
           integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
           crossorigin="anonymous" />
-    <link rel="stylesheet" href="/css/login_start.css?t=12345">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.css"
+          integrity="sha512-YdYyWQf8AS4WSB0WWdc3FbQ3Ypdm0QCWD2k4hgfqbQbRCJBEgX0iAegkl2S1Evma5ImaVXLBeUkIlP6hQ1eYKQ=="
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/signin_start.css?t=<?= time(); ?>">
     <link rel="stylesheet" href="/fonts/stylesheets.css?t=12345">
-    <link rel="stylesheet" href="/fonts/Lato/latofonts.css">
+    <link rel="stylesheet" href="/fonts/Lato-new/lato.css">
+    <style>
+        input[type="password"]::-ms-reveal,
+        input[type="password"]::-ms-clear {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+
 <!--<div class="perfect">-->
 <!--    <img src="/img/loginstart.png" alt="">-->
 <!--</div>-->

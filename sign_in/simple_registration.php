@@ -8,37 +8,29 @@
         <a href="/sign_in/simple_registration.php" class="active">Упрощенная</a>
     </div>
     <div class="registration_form_wrapper">
-        <form action="" method="post">
+        <form action="" method="post" id="simple-registration-form">
             <div class="forma">
-                <div class="form-group-item">
-                    <label for="registr-name-input">
-                        <img src="/img/user.svg" alt="user">
-                    </label>
-                    <input id="registr-name-input" name="name" type="text" placeholder=" " required>
-                    <span class="placeholder">Введите ФИО</span>
+                <div class="form-group-item" data-placeholder="Введите ФИО" data-label="ФИО">
+                    <label for="simple-registr-name-input"></label>
+                    <span class="registr_image"><img src="/img/user.svg" alt="user"></span>
+                    <input id="simple-registr-name-input" name="name" type="text" placeholder="" required>
                 </div>
 
-                <div class="form-group-item">
-                    <label for="registr-telephone-input">
-                        <img src="/img/tel.svg" alt="phone">
-                    </label>
-                    <input id="registr-telephone-input" name="phone" type="tel" placeholder=" " required>
-                    <span class="placeholder">Введите номер телефона</span>
+                <div class="form-group-item" data-placeholder="Введите номер телефона" data-label="Номер телефона">
+                    <label for="simple-registr-telephone-input"></label>
+                    <span class="registr_image"><img src="/img/tel.svg" alt="phone"></span>
+                    <input id="simple-registr-telephone-input" name="phone" type="tel" placeholder="" required>
                 </div>
                 <div class="form-group-list">
-                    <div class="form-group">
-                        <label for="registr-password-input">
-                            <img src="/img/password.svg" alt="password">
-                        </label>
-                        <input id="registr-password-input" name="password" type="password" placeholder=" " required>
-                        <span class="placeholder">Введите пароль</span>
+                    <div class="form-group" data-placeholder="Укажите пароль" data-label="Пароль">
+                        <label for="simple-registr-password-input"></label>
+                        <span class="registr_image"><img src="/img/password.svg" alt="password"></span>
+                        <input id="simple-registr-password-input" name="password" type="password" placeholder="" required>
                     </div>
-                    <div class="form-group">
-                        <label for="registr-password-again-input">
-                            <img src="/img/password.svg" alt="password">
-                        </label>
-                        <input id="registr-password-again-input" name="password" type="password" placeholder=" " required>
-                        <span class="placeholder">Повторите пароль</span>
+                    <div class="form-group" data-placeholder="Повторите пароль" data-label="Пароль">
+                        <label for="simple-registr-password-again-input"></label>
+                        <span class="registr_image"><img src="/img/password.svg" alt="password"></span>
+                        <input id="simple-registr-password-again-input" name="password" type="password" placeholder="" required>
                     </div>
                 </div>
                 <div class="checkbox_wrapper">
@@ -48,10 +40,10 @@
                     </label>
                     <span class="agree_info">Я даю свое право на информационную рассылку</span>
                 </div>
-                <button type="submit" class="btn registr_submit">зарегистрироваться</button>
+                <button type="submit" class="btn registr_submit disabled">зарегистрироваться</button>
         </form>
     </div>
-    <a href="#" class="back_to_main_page">
+    <a href="/sign_in/authorization.php" class="back_to_main_page">
         <img src="/img/Union.svg" alt="arrow">
         <span>вернутся на главную</span>
     </a>

@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="/css/layout.css?t=<?= time(); ?>">
     <link rel="stylesheet" href="/fonts/Lato/latofonts.css">
+    <style>
+        input[type="password"]::-ms-reveal,
+        input[type="password"]::-ms-clear {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <!--<div class="perfect">-->

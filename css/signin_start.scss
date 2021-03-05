@@ -11,6 +11,12 @@ html, body {
     font-family: 'Lato', sans-serif;
 }
 
+input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear
+{
+    display: none !important;
+}
+
 .btn {
     display: block;
     padding: 13px 0 14px;
@@ -28,6 +34,7 @@ html, body {
     text-transform: uppercase;
     color: #ffffff;
     cursor: pointer;
+    outline: none;
     transition: background 0.2s;
 
     &:hover, &:focus, &:active {
@@ -74,7 +81,7 @@ html, body {
 
     .standard_wrapper {
         position: absolute;
-        top: 76px;
+        top: 79px;
         left: 106px;
         width: 188px;
         height: 173px;
@@ -95,6 +102,8 @@ html, body {
             font-size: 39px;
             line-height: 1;
             color: #000000;
+            margin-top: -2px;
+            margin-left: -3px;
         }
     }
 
@@ -123,6 +132,47 @@ html, body {
             margin-top: 66px;
 
             form {
+
+                [data-placeholder][data-label] {
+                    position: relative;
+
+                    &:before,
+                    &:after {
+                        transition: opacity 0.15s;
+                        display: block;
+                        position: absolute;
+                        left: 56px;
+                        pointer-events: none;
+                        opacity: 0;
+                        font-family: 'Lato', sans-serif;
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: 1;
+                        letter-spacing: 0.5px;
+                    }
+
+                    &:before {
+                        content: attr(data-placeholder);
+                        top: 33px;
+                        font-size: 15px;
+                        color: rgba(1, 1, 1, 0.4);
+                    }
+
+                    &:after {
+                        content: attr(data-label);
+                        top: 20px;
+                        font-size: 13px;
+                        color: rgba(1, 1, 1, 0.6);
+                    }
+
+                    &:not(.filled):before {
+                        opacity: 1;
+                    }
+
+                    &.filled:after {
+                        opacity: 1;
+                    }
+                }
                 .forma {
                     .form-group {
                         width: 340px;
@@ -134,34 +184,50 @@ html, body {
                             display: block;
                             position: absolute;
                             top: 31px;
-                            left: 23px;
+                            left: 22px;
                         }
 
                         input {
+                            appearance: none;
+                            -moz-appearance: none;
+                            -webkit-appearance: none;
                             display: block;
                             background: #efefef;
                             border-radius: 8px;
                             border: none;
                             outline: none;
-                            padding: 34px 10px 31px 57px;
-                            font-weight: 500;
+                            padding: 43px 10px 21px 57px;
+                            font-weight: 900;
                             width: 100%;
+                        }
 
-                            &::placeholder {
-                                font-family: 'Lato', sans-serif;
-                                font-style: normal;
-                                font-weight: 300;
-                                font-size: 15px;
-                                line-height: 1;
-                                color: #010101;
-                                opacity: 0.4;
+                        .inspect_pass{
+                            opacity: 0;
+                            pointer-events: none;
+                            display: block;
+                            position: absolute;
+                            bottom: 22px;
+                            right: 14px;
+                            font-family: 'Lato', sans-serif;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 11px;
+                            line-height: 1;
+                            text-transform: uppercase;
+                            color: #010101;
+                            transition: opacity 0.2s;
+                            cursor: pointer;
+
+                            &.show{
+                                opacity: 1;
+                                pointer-events: auto;
                             }
                         }
                     }
 
                     .forgot_password {
                         display: block;
-                        margin: 27px auto 48px;
+                        margin: 29px 0 48px 114px;
                         background: none;
                         border: none;
                         outline: none;
@@ -174,18 +240,25 @@ html, body {
                         color: #010101;
                         transition: opacity 0.2s;
                         cursor: pointer;
+                        letter-spacing: 0.5px;
+                        opacity: 0.9;
 
                         &:hover {
-                            opacity: 0.6;
+                            opacity: 1;
                         }
                     }
 
                     .btn.sign_in_submit {
                         opacity: 1;
                         transition: opacity 0.2s;
+                        pointer-events: auto;
+                        cursor: pointer;
+                        width: 336px;
+                        padding: 16px 0 13px;
 
                         &.disabled {
                             opacity: 0.12;
+                            pointer-events: none;
                         }
                     }
                 }
@@ -193,16 +266,17 @@ html, body {
         }
 
         .registration_wrapper {
-            margin: 71px auto 84px;
+            margin: 70px auto 84px;
 
             p {
-                margin: 0;
+                margin: 0 0 0 -12px;
                 font-style: normal;
                 font-weight: normal;
                 font-size: 13px;
                 line-height: 1.3;
                 color: #000000;
                 text-align: center;
+                letter-spacing: 0.4px;
             }
 
             a {
@@ -215,6 +289,8 @@ html, body {
                 color: #dc0000;
                 text-align: center;
                 transition: color 0.2s;
+                letter-spacing: 0.5px;
+                margin-left: -18px;
 
                 &:hover {
                     color: #9e0101;
@@ -226,13 +302,14 @@ html, body {
             margin-bottom: 83px;
 
             p {
-                margin: 0 0 21px;
+                margin: 0 0 23px -16px;
                 font-style: normal;
-                font-weight: normal;
+                font-weight: 400;
                 font-size: 14px;
                 line-height: 1;
                 text-align: center;
                 color: #000000;
+                letter-spacing: 0.5px;
             }
 
             .app_install_list {
@@ -245,7 +322,7 @@ html, body {
                 a {
                     display: block;
                     text-decoration: none;
-                    margin: 0 10px;
+                    margin-right: 20px;
                     transition: opacity 0.2s;
 
                     &:hover {
@@ -328,12 +405,54 @@ html, body {
             width: 638px;
 
             form {
+                [data-placeholder][data-label] {
+                    position: relative;
+
+                    &:before,
+                    &:after {
+                        transition: opacity 0.15s;
+                        display: block;
+                        position: absolute;
+                        left: 55px;
+                        pointer-events: none;
+                        opacity: 0;
+                        font-family: 'Lato', sans-serif;
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: 1;
+                        letter-spacing: 0.5px;
+                    }
+
+                    &:before {
+                        content: attr(data-placeholder);
+                        top: 35px;
+                        font-size: 15px;
+                        color: rgba(1, 1, 1, 0.4);
+                    }
+
+                    &:after {
+                        content: attr(data-label);
+                        top: 23px;
+                        font-size: 13px;
+                        color: rgba(1, 1, 1, 0.6);
+                    }
+
+                    &:not(.filled):before {
+                        opacity: 1;
+                    }
+
+                    &.filled:after {
+                        opacity: 1;
+                    }
+                }
                 .forma {
+                    margin-left: -8px;
                     .form-group-item {
                         position: relative;
                         margin-bottom: 35px;
+                        width: 640px;
 
-                        label {
+                        .registr_image {
                             display: block;
                             position: absolute;
                             top: 33px;
@@ -344,44 +463,38 @@ html, body {
                             display: block;
                             background: #efefef;
                             border-radius: 8px;
-                            border: none;
+                            border: 2px solid transparent;
                             outline: none;
-                            padding: 34px 10px 32px 48px;
-                            font-weight: 500;
-                            width: 100%;
-
-                            &::placeholder {
-                                font-family: 'Lato', sans-serif;
-                                font-style: normal;
-                                font-weight: 300;
-                                font-size: 15px;
-                                line-height: 1;
-                                color: #010101;
-                                opacity: 0.4;
-                            }
-
-                            &:placeholder-shown {
-                                + span.placeholder {
-                                    top: 35px;
-                                }
-                            }
-                        }
-
-                        span.placeholder {
-                            transition: top 0.15s;
-                            display: block;
-                            position: absolute;
-                            top: 15px;
-                            left: 48px;
+                            padding: 38px 7px 21px 52px;
                             font-family: 'Lato', sans-serif;
                             font-style: normal;
-                            font-weight: 300;
-                            font-size: 15px;
+                            font-weight: 900;
+                            font-size: 17px;
                             line-height: 1;
+                            letter-spacing: 1.3px;
                             color: #010101;
-                            opacity: 0.4;
-                            pointer-events: none;
+                            width: 100%;
+                            transition: all 0.2s;
+
+                            &.error{
+                                background: #FFFFFF;
+                                border: 2px solid #dc0000;
+                                box-shadow: 0 0 9px rgba(220, 0, 0, 0.4);
+                            }
+
+                            &.success{
+                                background: #FFFFFF;
+                                border: 2px solid #00ae31;
+                                box-shadow: 0 0 9px rgba(0, 174, 49, 0.4);
+                            }
+
+                            &:focus{
+                                background: #efefef;
+                                border: 2px solid transparent;
+                                box-shadow: none;
+                            }
                         }
+
                     }
 
                     .form-group-list {
@@ -395,68 +508,85 @@ html, body {
                             margin: 0 19px 35px;
                             width: 300px;
 
-                            label {
+                            .registr_image {
                                 display: block;
                                 position: absolute;
-                                top: 33px;
-                                left: 21px;
+                                top: 32px;
+                                left: 25px;
+                            }
+
+                            & input.success{
+                                border: 6px solid rgba(0, 174, 49, 0.06);
+                                border-radius: 9px;
                             }
 
                             input {
                                 display: block;
                                 background: #efefef;
                                 border-radius: 8px;
-                                border: none;
+                                border: 2px solid transparent;
                                 outline: none;
-                                padding: 34px 10px 32px 48px;
-                                font-weight: 500;
+                                padding: 38px 10px 19px 57px;
+                                font-family: 'Lato', sans-serif;
+                                font-style: normal;
+                                font-weight: 900;
+                                font-size: 17px;
+                                line-height: 1;
+                                letter-spacing: 0.01em;
+                                color: #010101;
                                 width: 100%;
+                                transition: background-color, border-color 0.2s;
 
-                                &::placeholder {
-                                    font-family: 'Lato', sans-serif;
-                                    font-style: normal;
-                                    font-weight: 300;
-                                    font-size: 15px;
-                                    line-height: 1;
-                                    color: #010101;
-                                    opacity: 0.4;
+                                &.error{
+                                    background-color: #FFFFFF;
+                                    border: 2px solid #dc0000;
+                                    box-shadow: 0 0 9px rgba(220, 0, 0, 0.4);
+                                    background-image: url("../img/error.svg");
+                                    background-repeat: no-repeat;
+                                    background-position: center right 15px;
                                 }
 
-                                &:placeholder-shown {
-                                    + span.placeholder {
-                                        top: 35px;
-                                    }
+                                &.success{
+                                    background-color: #FFFFFF;
+                                    border: 2px solid #00ae31;
+                                    //box-shadow: 0 0 9px rgba(0, 174, 49, 0.4);
+                                    background-image: url("../img/sucesses.svg");
+                                    background-repeat: no-repeat;
+                                    background-position: center right 15px;
+                                }
+
+                                &:focus{
+                                    background: #efefef;
+                                    border: 2px solid transparent;
+                                    box-shadow: none;
                                 }
                             }
 
-                            span.placeholder {
-                                transition: top 0.15s;
-                                display: block;
+                            label.error{
                                 position: absolute;
-                                top: 15px;
-                                left: 48px;
+                                bottom: -20px;
+                                border: none;
                                 font-family: 'Lato', sans-serif;
                                 font-style: normal;
-                                font-weight: 300;
-                                font-size: 15px;
-                                line-height: 1;
-                                color: #010101;
-                                opacity: 0.4;
-                                pointer-events: none;
+                                font-weight: 900;
+                                font-size: 9px;
+                                line-height: 12px;
+                                text-transform: uppercase;
+                                color: #DC0000;
                             }
 
                             .select_wrapper {
                                 span {
-                                    position: absolute;
-                                    z-index: 10;
-
                                     &.icon {
+                                        position: absolute;
                                         top: 31px;
                                         left: 23px;
                                         z-index: 100;
                                     }
 
                                     &.select_placeholder {
+                                        position: absolute;
+                                        z-index: 10;
                                         font-family: 'Lato', sans-serif;
                                         font-style: normal;
                                         font-weight: 400;
@@ -468,7 +598,6 @@ html, body {
                                         left: 58px;
                                     }
                                 }
-
 
                                 select {
                                     display: block;
@@ -483,6 +612,12 @@ html, body {
                                     background: #efefef;
                                     border-radius: 8px;
 
+                                    .selection {
+                                        display: block;
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+
                                     .select2-selection {
                                         border: none;
                                         background-color: #efefef;
@@ -490,7 +625,8 @@ html, body {
                                     }
 
                                     .select2-selection__rendered {
-                                        padding: 46px 138px 24px 58px;
+                                        width: 100%;
+                                        padding: 46px 28px 24px 58px;
                                         font-family: 'Lato', sans-serif;
                                         font-style: normal;
                                         font-weight: 900;
@@ -498,11 +634,18 @@ html, body {
                                         line-height: 1;
                                         letter-spacing: 0.01em;
                                         color: #010101;
+
+                                        &.success{
+                                            background: #FFFFFF;
+                                            border: 2px solid #00ae31;
+                                            box-shadow: 0 0 9px rgba(0, 174, 49, 0.4);
+                                            border-radius: 8px;
+                                        }
                                     }
 
                                     .select2-selection__arrow {
                                         top: 24px;
-                                        left: 279px;
+                                        right: 15px;
                                     }
 
                                     .select2-selection__placeholder {
@@ -545,11 +688,34 @@ html, body {
                                     }
                                 }
                             }
+
+                            .inspect_pass{
+                                opacity: 0;
+                                pointer-events: none;
+                                display: block;
+                                position: absolute;
+                                bottom: 22px;
+                                right: 14px;
+                                font-family: 'Lato', sans-serif;
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 11px;
+                                line-height: 1;
+                                text-transform: uppercase;
+                                color: #010101;
+                                transition: opacity 0.2s;
+                                cursor: pointer;
+
+                                &.show{
+                                    opacity: 1;
+                                    pointer-events: auto;
+                                }
+                            }
                         }
                     }
 
                     .checkbox_wrapper {
-                        margin: 11px 0 33px;
+                        margin: 16px 0 33px;
                         position: relative;
                         display: flex;
                         flex-direction: row;
@@ -614,11 +780,21 @@ html, body {
                     }
 
                     button.registr_submit {
-                        padding: 14px 0 15px;
+                        width: 640px;
+                        padding: 17px 0 15px;
+                        opacity: 1;
+                        transition: opacity 0.2s;
+                        pointer-events: auto;
+                        cursor: pointer;
+                        outline: none;
+
+                        &.disabled {
+                            opacity: 0.12;
+                            pointer-events: none;
+                        }
                     }
                 }
             }
-
         }
 
         .back_to_main_page {
@@ -626,7 +802,7 @@ html, body {
             flex-direction: row;
             justify-content: center;
             padding: 16px 0 13px;
-            margin: 47px 0 41px;
+            margin: 47px 0 41px -7px;
             width: 100%;
             text-decoration: none;
             border: 1px solid rgba(0, 0, 0, 0.29);
@@ -722,14 +898,19 @@ html, body {
             height: auto;
 
             .ln {
+                width: 39px;
+                height: 36px;
                 margin-right: 15px;
-                padding: 7px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 border: 2px solid #c9c9c9;
                 border-radius: 10px;
                 font-style: normal;
                 font-weight: 900;
                 font-size: 15px;
-                line-height: 1.3;
+                line-height: 1.1;
                 letter-spacing: 1.5px;
                 color: #000000;
             }
@@ -769,6 +950,52 @@ html, body {
         background-image: url("../img/decor_bottom.svg");
         background-repeat: no-repeat;
     }
+
+    @media (max-height: 1000px) {
+        .sign_in_start_content {
+            padding: 90px 0 0;
+
+            .registration_wrapper {
+                margin: 54px auto 57px;
+            }
+        }
+
+        .registration_start_content {
+            padding: 55px 0 0;
+
+            .kind_of_registration_wrapper {
+                margin: 32px -12px 41px;
+            }
+
+            .registration_form_wrapper {
+                form {
+                    .forma {
+                        .form-group-item {
+                            margin-bottom: 25px;
+                        }
+
+                        .form-group-list {
+                            .form-group {
+                                margin: 0 19px 25px;
+                            }
+                        }
+
+                        .checkbox_wrapper {
+                            margin: 11px 0 35px;
+                        }
+                    }
+                }
+            }
+
+            .back_to_main_page {
+                margin: 25px 0 34px -7px;
+            }
+
+            .decor {
+                margin-bottom: 133px;
+            }
+        }
+    }
 }
 
 .sign_in_forgot_password_modal {
@@ -776,12 +1003,14 @@ html, body {
     background: #ffffff;
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.04);
     border-radius: 22px;
-    padding: 30px;
+    padding: 30px 30px 50px;
 
     .title {
+        margin: 0 0 60px;
         font-style: normal;
         font-weight: 700;
-        font-size: 19px;
+        font-size: 21px;
+        letter-spacing: 0.4px;
         line-height: 1.2;
         text-align: center;
         color: #000000;
@@ -789,6 +1018,46 @@ html, body {
 
     .forgot_password_form {
         form {
+            [data-placeholder][data-label] {
+                position: relative;
+
+                &:before,
+                &:after {
+                    transition: opacity 0.15s;
+                    display: block;
+                    position: absolute;
+                    left: 56px;
+                    pointer-events: none;
+                    opacity: 0;
+                    font-family: 'Lato', sans-serif;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 1;
+                    letter-spacing: 0.5px;
+                }
+
+                &:before {
+                    content: attr(data-placeholder);
+                    top: 33px;
+                    font-size: 15px;
+                    color: rgba(1, 1, 1, 0.4);
+                }
+
+                &:after {
+                    content: attr(data-label);
+                    top: 20px;
+                    font-size: 13px;
+                    color: rgba(1, 1, 1, 0.6);
+                }
+
+                &:not(.filled):before {
+                    opacity: 1;
+                }
+
+                &.filled:after {
+                    opacity: 1;
+                }
+            }
             .forma {
                 .form-group {
                     width: 340px;
@@ -808,19 +1077,11 @@ html, body {
                         border-radius: 8px;
                         border: none;
                         outline: none;
-                        padding: 34px 10px 36px 58px;
-                        font-weight: 500;
+                        padding: 41px 10px 20px 58px;
+                        font-size: 17px;
+                        line-height: 1;
+                        font-weight: 900;
                         width: 100%;
-
-                        &::placeholder {
-                            font-family: 'Lato', sans-serif;
-                            font-style: normal;
-                            font-weight: 300;
-                            font-size: 15px;
-                            line-height: 1;
-                            color: #010101;
-                            opacity: 0.4;
-                        }
                     }
                 }
 
@@ -839,9 +1100,25 @@ html, body {
             }
         }
     }
+}
 
-    .remodal button.remodal-close:before {
-        left: unset;
-        right: 0;
+body .remodal-wrapper{
+    .remodal{
+        .remodal-close{
+            width: 72px;
+            height: 84px;
+            left: unset;
+            right: 0;
+            opacity: 1;
+            background-image: url("../img/close.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            &:before{
+                content: none;
+                display: none;
+            }
+        }
     }
 }
+
+

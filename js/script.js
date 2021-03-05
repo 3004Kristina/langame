@@ -29,6 +29,14 @@ window.Layout = {
         jQuery('input[type="tel"]').mask('+7 (999) 999-99-99');
     },
 
+    initBirthdayMask: function() {
+        if (!jQuery.fn.mask) {
+            return;
+        }
+
+        jQuery('#registr-birthday-input').mask('00.00.0000');
+    },
+
     initAjaxUrlHandlers: function() {
         jQuery(document).on('click', 'a[data-ajax-url][href^="/"]', function(e) {
             e.preventDefault();
@@ -44,6 +52,7 @@ window.Layout = {
         // initialize plugins
         Layout.initSlick();
         Layout.initPhoneMask();
+        Layout.initBirthdayMask();
     },
 
     activateUrlLinks: function(url) {

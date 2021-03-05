@@ -1,7 +1,14 @@
 @font-face {
     font-family: 'Nitty PX';
-    src: url('Nitti-Bold.ttf');
+    src: url('NittiPX-Medium.ttf');
     font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nitty PX';
+    src: url('Nitti-Bold.ttf');
+    font-weight: 700;
     font-style: normal;
 }
 
