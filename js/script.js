@@ -1,3 +1,4 @@
+$(document).on('dragstart','img', function(event) { event.preventDefault(); });
 window.Layout = {
     initSlick: function() {
         if (!jQuery.fn.slick) {

@@ -2,7 +2,7 @@
     return;
 } ?>
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="/css/layout.css?t=<?= time(); ?>">
     <link rel="stylesheet" href="/fonts/Lato/latofonts.css">
     <style>
-        input[type="password"]::-ms-reveal,
-        input[type="password"]::-ms-clear {
+        input::-ms-reveal,
+        input::-ms-clear {
             display: none;
         }
     </style>

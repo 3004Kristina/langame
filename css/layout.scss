@@ -11,6 +11,20 @@ html, body {
     font-family: 'Lato', sans-serif;
 }
 
+*:not(input) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+    user-drag: none;
+}
+
 .btn {
     display: block;
     padding: 13px 0 14px;
@@ -863,6 +877,10 @@ html, body {
                             width: 70px;
                             height: 70px;
                             margin-right: 25px;
+
+                            img{
+                                pointer-events: none;
+                            }
                         }
 
                         .user_name {

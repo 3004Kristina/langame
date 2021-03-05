@@ -16,7 +16,7 @@
                     <input id="registr-name-input" name="name" type="text" placeholder="" required>
                 </div>
                 <div class="form-group-list error">
-                    <div class="form-group" data-placeholder="Введите номер телефона" data-label="Номер телефона">
+                    <div class="form-group error" data-placeholder="Введите номер телефона" data-label="Номер телефона">
                         <label for="registr-telephone-input"></label>
                         <span class="registr_image"><img src="/img/tel.svg" alt="phone"></span>
                         <input id="registr-telephone-input" name="phone" type="tel" placeholder="" required>
@@ -52,27 +52,27 @@
                             <span class="select_placeholder">Документ</span>
                         </div>
                     </div>
-                    <div class="form-group" data-placeholder="Укажите 10 цифр серия и номер" data-label="Укажите 10 цифр серия и номер">
+                    <div class="form-group error" data-placeholder="Укажите 10 цифр серия и номер" data-label="Укажите 10 цифр серия и номер">
                         <label for="registr-passport-input"></label>
                         <span class="registr_image"><img src="/img/transcript.svg" alt="passport"></span>
                         <input id="registr-passport-input" name="passport" type="text" placeholder="" required>
-                        <span class="error">Поле должно содержать 10 Символов</span>
+                        <span class="error" style="display: block">Поле должно содержать 10 Символов</span>
                     </div>
                 </div>
                 <div class="form-group-list">
-                    <div class="form-group" data-placeholder="Укажите пароль" data-label="Пароль">
+                    <div class="form-group error" data-placeholder="Укажите пароль" data-label="Пароль">
                         <label for="registr-password-input"></label>
                         <span class="registr_image"><img src="/img/password.svg" alt="password"></span>
                         <input id="registr-password-input" name="password" type="password" placeholder="" required>
                         <span data-action="show_password" class="inspect_pass">показать</span>
-                        <span class="error">Пароль должен быть не менее 6 символов</span>
+                        <span class="error" style="display: block">Пароль должен быть не менее 6 символов</span>
                     </div>
-                    <div class="form-group" data-placeholder="Повторите пароль" data-label="Пароль">
+                    <div class="form-group error" data-placeholder="Повторите пароль" data-label="Пароль">
                         <label for="registr-password-again-input"></label>
                         <span class="registr_image"><img src="/img/password.svg" alt="password"></span>
                         <input id="registr-password-again-input" name="password" type="password" placeholder="" required>
                         <span data-action="show_password" class="inspect_pass">показать</span>
-                        <span class="error">Пароль должен быть не менее 6 символов</span>
+                        <span class="error" style="display: block">Пароль должен быть не менее 6 символов</span>
                     </div>
                 </div>
                 <div class="checkbox_wrapper">
