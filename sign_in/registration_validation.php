@@ -10,26 +10,26 @@
     <div class="registration_form_wrapper">
         <form action="" method="post" id="full-registration-form">
             <div class="forma">
-                <div class="form-group-item" data-placeholder="Введите ФИО" data-label="ФИО">
+                <div class="form-group-item success" data-placeholder="Введите ФИО" data-label="ФИО">
                     <label for="registr-name-input"></label>
                     <span class="registr_image"><img src="/img/user.svg" alt="user"></span>
                     <input id="registr-name-input" name="name" type="text" placeholder="" required>
                 </div>
-                <div class="form-group-list">
+                <div class="form-group-list error">
                     <div class="form-group" data-placeholder="Введите номер телефона" data-label="Номер телефона">
                         <label for="registr-telephone-input"></label>
                         <span class="registr_image"><img src="/img/tel.svg" alt="phone"></span>
                         <input id="registr-telephone-input" name="phone" type="tel" placeholder="" required>
-                        <span class="error">Поле должно содержать 11 цифр</span>
+                        <span class="error" style="display: block">Поле должно содержать 11 цифр</span>
                     </div>
-                    <div class="form-group" data-placeholder="Введите дату рождения" data-label="Дата рождения">
+                    <div class="form-group success" data-placeholder="Введите дату рождения" data-label="Дата рождения">
                         <label for="registr-birthday-input"></label>
                         <span class="registr_image"><img src="/img/Calendar.svg" alt="calendar"></span>
                         <input id="registr-birthday-input" name="birthday" type="text" placeholder="" required>
                     </div>
                 </div>
                 <div class="form-group-list">
-                    <div class="form-group">
+                    <div class="form-group success">
                         <div class="select_wrapper">
                             <span class="icon">
                             <img src="/img/document.svg" alt="document">
@@ -91,3 +91,4 @@
     </a>
 </div>
 <?php require __DIR__ . '/.sign_in_registr_footer.php'; ?>
+

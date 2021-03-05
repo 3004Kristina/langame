@@ -107,6 +107,7 @@ input[type=password]::-ms-clear
         }
     }
 
+
     .sign_in_start_content {
         width: 1140px;
         margin: 0 auto;
@@ -474,19 +475,7 @@ input[type=password]::-ms-clear
                             letter-spacing: 1.3px;
                             color: #010101;
                             width: 100%;
-                            transition: all 0.2s;
-
-                            &.error{
-                                background: #FFFFFF;
-                                border: 2px solid #dc0000;
-                                box-shadow: 0 0 9px rgba(220, 0, 0, 0.4);
-                            }
-
-                            &.success{
-                                background: #FFFFFF;
-                                border: 2px solid #00ae31;
-                                box-shadow: 0 0 9px rgba(0, 174, 49, 0.4);
-                            }
+                            transition: background-color, border-color 0.2s;
 
                             &:focus{
                                 background: #efefef;
@@ -495,6 +484,46 @@ input[type=password]::-ms-clear
                             }
                         }
 
+                        span.error{
+                            display: none;
+                            position: absolute;
+                            bottom: -20px;
+                            border: none;
+                            font-family: 'Lato', sans-serif;
+                            font-style: normal;
+                            font-weight: 900;
+                            font-size: 9px;
+                            line-height: 12px;
+                            text-transform: uppercase;
+                            color: #DC0000;
+                        }
+
+                        &.error{
+                            border: 6px solid rgba(220, 0, 0, 0.06);
+                            border-radius: 9px;
+
+                            & input{
+                                background-color: #FFFFFF;
+                                border: 2px solid #dc0000;
+                                box-shadow: 0 0 9px rgba(220, 0, 0, 0.4);
+                                background-image: url("../img/error.svg");
+                                background-repeat: no-repeat;
+                                background-position: center right 15px;
+                            }
+                        }
+
+                        &.success{
+                            border: 6px solid rgba(0, 174, 49, 0.06);
+                            border-radius: 9px;
+
+                            & input{
+                                background-color: #FFFFFF;
+                                border: 2px solid #00ae31;
+                                background-image: url("../img/sucesses.svg");
+                                background-repeat: no-repeat;
+                                background-position: center right 15px;
+                            }
+                        }
                     }
 
                     .form-group-list {
@@ -515,9 +544,31 @@ input[type=password]::-ms-clear
                                 left: 25px;
                             }
 
-                            & input.success{
+                            &.success{
                                 border: 6px solid rgba(0, 174, 49, 0.06);
                                 border-radius: 9px;
+
+                                & input{
+                                    background-color: #FFFFFF;
+                                    border: 2px solid #00ae31;
+                                    background-image: url("../img/sucesses.svg");
+                                    background-repeat: no-repeat;
+                                    background-position: center right 15px;
+                                }
+                            }
+
+                            &.error{
+                                border: 6px solid rgba(220, 0, 0, 0.06);
+                                border-radius: 9px;
+
+                                & input{
+                                    background-color: #FFFFFF;
+                                    border: 2px solid #dc0000;
+                                    box-shadow: 0 0 9px rgba(220, 0, 0, 0.4);
+                                    background-image: url("../img/error.svg");
+                                    background-repeat: no-repeat;
+                                    background-position: center right 15px;
+                                }
                             }
 
                             input {
@@ -537,24 +588,6 @@ input[type=password]::-ms-clear
                                 width: 100%;
                                 transition: background-color, border-color 0.2s;
 
-                                &.error{
-                                    background-color: #FFFFFF;
-                                    border: 2px solid #dc0000;
-                                    box-shadow: 0 0 9px rgba(220, 0, 0, 0.4);
-                                    background-image: url("../img/error.svg");
-                                    background-repeat: no-repeat;
-                                    background-position: center right 15px;
-                                }
-
-                                &.success{
-                                    background-color: #FFFFFF;
-                                    border: 2px solid #00ae31;
-                                    //box-shadow: 0 0 9px rgba(0, 174, 49, 0.4);
-                                    background-image: url("../img/sucesses.svg");
-                                    background-repeat: no-repeat;
-                                    background-position: center right 15px;
-                                }
-
                                 &:focus{
                                     background: #efefef;
                                     border: 2px solid transparent;
@@ -562,7 +595,8 @@ input[type=password]::-ms-clear
                                 }
                             }
 
-                            label.error{
+                            span.error{
+                                display: none;
                                 position: absolute;
                                 bottom: -20px;
                                 border: none;

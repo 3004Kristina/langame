@@ -15,22 +15,26 @@
                     <span class="registr_image"><img src="/img/user.svg" alt="user"></span>
                     <input id="simple-registr-name-input" name="name" type="text" placeholder="" required>
                 </div>
-
                 <div class="form-group-item" data-placeholder="Введите номер телефона" data-label="Номер телефона">
                     <label for="simple-registr-telephone-input"></label>
                     <span class="registr_image"><img src="/img/tel.svg" alt="phone"></span>
                     <input id="simple-registr-telephone-input" name="phone" type="tel" placeholder="" required>
+                    <span class="error">Поле должно содержать 11 цифр</span>
                 </div>
                 <div class="form-group-list">
                     <div class="form-group" data-placeholder="Укажите пароль" data-label="Пароль">
                         <label for="simple-registr-password-input"></label>
                         <span class="registr_image"><img src="/img/password.svg" alt="password"></span>
                         <input id="simple-registr-password-input" name="password" type="password" placeholder="" required>
+                        <span data-action="show_password" class="inspect_pass">показать</span>
+                        <span class="error">Пароль должен быть не менее 6 символов</span>
                     </div>
                     <div class="form-group" data-placeholder="Повторите пароль" data-label="Пароль">
                         <label for="simple-registr-password-again-input"></label>
                         <span class="registr_image"><img src="/img/password.svg" alt="password"></span>
                         <input id="simple-registr-password-again-input" name="password" type="password" placeholder="" required>
+                        <span data-action="show_password" class="inspect_pass">показать</span>
+                        <span class="error">Пароль должен быть не менее 6 символов</span>
                     </div>
                 </div>
                 <div class="checkbox_wrapper">
