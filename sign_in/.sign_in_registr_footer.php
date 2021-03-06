@@ -131,7 +131,7 @@
 <div class="remodal sign_in_computer_locked_modal" data-remodal-id="computer_locked_modal" data-remodal-options="hashTracking: false">
     <button data-remodal-action="close" class="remodal-close"></button>
     <div class="remodal-content">
-        <p class="title">Компьютер заблокирован</p>
+        <p class="locked_title">Компьютер заблокирован</p>
         <div class="img_wrapper">
             <img src="/img/attention.svg" alt="attention">
         </div>

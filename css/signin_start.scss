@@ -1059,17 +1059,6 @@ html, body {
     border-radius: 22px;
     padding: 30px 30px 50px;
 
-    .title {
-        margin: 0 0 60px;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 21px;
-        letter-spacing: 0.4px;
-        line-height: 1.2;
-        text-align: center;
-        color: #000000;
-    }
-
     .forgot_password_form {
         form {
             [data-placeholder][data-label] {
@@ -1169,17 +1158,7 @@ html, body {
     background: #ffffff;
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.04);
     border-radius: 22px;
-    padding: 35px 38px 48px;
-
-    .title {
-        margin: 0 0 49px;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 19px;
-        line-height: 1;
-        text-align: center;
-        color: #000000;
-    }
+    padding: 30px 38px 48px;
 
     .instruction {
         max-width: 287px;
@@ -1262,7 +1241,7 @@ html, body {
     border-radius: 22px;
     padding: 50px 38px 52px;
 
-    .title {
+    .locked_title {
         margin: 0;
         font-style: normal;
         font-weight: bold;
@@ -1303,17 +1282,6 @@ html, body {
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.04);
     border-radius: 22px;
     padding: 30px 30px 50px;
-
-    .title {
-        margin: 0 0 40px;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 21px;
-        letter-spacing: 0.4px;
-        line-height: 1.2;
-        text-align: center;
-        color: #000000;
-    }
 
     .set_new_password_form {
         form {
@@ -1428,16 +1396,6 @@ html, body {
     border-radius: 22px;
     padding: 30px 30px 50px;
 
-    .title{
-        margin: 30px 0 40px;
-        font-weight: 700;
-        font-size: 21px;
-        letter-spacing: 0.4px;
-        line-height: 1.2;
-        text-align: center;
-        color: #000000;
-    }
-
     .instruction {
         max-width: 287px;
         margin: 0 auto;
@@ -1453,6 +1411,17 @@ html, body {
 
 body .remodal-wrapper {
     .remodal {
+        .title {
+            margin: 0 0 40px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 21px;
+            letter-spacing: 0.4px;
+            line-height: 1.2;
+            text-align: center;
+            color: #000000;
+        }
+
         .remodal-content {
             transition: opacity 0.2s;
         }
