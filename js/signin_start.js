@@ -75,6 +75,7 @@ jQuery(function() {
                 removeRemodalAnimation();
 
                 jQuery('[data-remodal-id="code_recovery_modal"]').remodal().open();
+                startCountDown();
             }
         });
     });
@@ -118,7 +119,6 @@ jQuery(function() {
             url: '',
             data: $form.serialize(),
             success: function() {
-                $form.closest('[data-remodal-id]').remodal().close();
 
                 removeRemodalAnimation();
 
@@ -137,21 +137,25 @@ jQuery(function() {
     var KEY_BACKSPACE = 8,
         KEY_TAB = 9,
         KEY_DELETE = 46,
+        KEY_ENTER = 13,
         CODE_ALLOWED_KEYBOARD_KEYS = [
-            48, /* 0 main keyboard */ 96,  /* 0 side keyboard */
-            49, /* 1 main keyboard */ 97,  /* 1 side keyboard */
-            50, /* 2 main keyboard */ 98,  /* 2 side keyboard */
-            51, /* 3 main keyboard */ 99,  /* 3 side keyboard */
-            52, /* 4 main keyboard */ 100, /* 4 side keyboard */
-            53, /* 5 main keyboard */ 101, /* 5 side keyboard */
-            54, /* 6 main keyboard */ 102, /* 6 side keyboard */
-            55, /* 7 main keyboard */ 103, /* 7 side keyboard */
-            56, /* 8 main keyboard */ 104, /* 8 side keyboard */
-            57, /* 9 main keyboard */ 105, /* 9 side keyboard */
+            112, /* F1 */  48, /* 0 main keyboard */ 96,  /* 0 side keyboard */
+            113, /* F2 */  49, /* 1 main keyboard */ 97,  /* 1 side keyboard */
+            114, /* F3 */  50, /* 2 main keyboard */ 98,  /* 2 side keyboard */
+            115, /* F4 */  51, /* 3 main keyboard */ 99,  /* 3 side keyboard */
+            116, /* F5 */  52, /* 4 main keyboard */ 100, /* 4 side keyboard */
+            117, /* F6 */  53, /* 5 main keyboard */ 101, /* 5 side keyboard */
+            118, /* F7 */  54, /* 6 main keyboard */ 102, /* 6 side keyboard */
+            119, /* F8 */  55, /* 7 main keyboard */ 103, /* 7 side keyboard */
+            120, /* F9 */  56, /* 8 main keyboard */ 104, /* 8 side keyboard */
+            121, /* F10 */ 57, /* 9 main keyboard */ 105, /* 9 side keyboard */
+            122, /* F11 */
+            123, /* F12 */
 
             KEY_BACKSPACE,
             KEY_TAB,
-            KEY_DELETE
+            KEY_DELETE,
+            KEY_ENTER
         ];
 
     jQuery(document).on('keydown', '.code_wrapper input', function(e) {
@@ -177,36 +181,37 @@ jQuery(function() {
         }
     });
 
-    function CountDown() {
-        var className = 'timer_' + Math.floor((Math.random() * 10001) + (Math.random() * 10001));
-        jQuery('.sign_in_code_recovery_modal #countdown').attr('class', '');
-        jQuery('.sign_in_code_recovery_modal #countdown').addClass(className);
-        jQuery('#reSendCode').addClass('disabled');
-        var timer2 = '3:00';
+    function startCountDown() {
+        var $countdown = jQuery('#countdown'),
+            $reSendCode = jQuery('#reSendCode'),
+            time = 180;
+
+        $countdown.text(getTimeText(time));
+
+        $reSendCode.addClass('disabled');
+
         var interval = setInterval(function() {
-            var timer = timer2.split(':');
-            var minutes = parseInt(timer[0], 10);
-            var seconds = parseInt(timer[1], 10);
-
-            --seconds;
-            minutes = (seconds < 0) ? --minutes : minutes;
-
-            seconds = (seconds < 0) ? 59 : seconds;
-            seconds = (seconds < 10) ? '0' + seconds : seconds;
-            if (minutes < 0) {
+            time--;
+            $countdown.text(getTimeText(time));
+            if (time === 0) {
+                $reSendCode.removeClass('disabled');
+                $countdown.text(' ');
                 clearInterval(interval);
-                jQuery('#reSendCode').removeClass('disabled');
-                jQuery('.sign_in_code_recovery_modal #countdown.' + className).text('');
-                return;
             }
-            jQuery('.sign_in_code_recovery_modal #countdown.' + className).html(minutes + ':' + seconds);
-            timer2 = minutes + ':' + seconds;
         }, 1000);
     }
 
-    CountDown();
+    function getTimeText(time) {
+        var minutes = '' + Math.floor(time / 60),
+            seconds = '' + time % 60;
 
-    jQuery('.remodal').on('opened', function(e){
+        seconds = seconds.length === 1 ? '0' + seconds : seconds;
+
+        return minutes + ':' + seconds;
+    }
+
+
+    jQuery('.remodal').on('opened', function(e) {
         jQuery(this).find('form input').eq(0).trigger('focus');
     });
 

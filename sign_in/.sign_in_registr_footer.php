@@ -99,7 +99,7 @@
 
                         <input type="text" name="code" required="required" maxlength="1">
                     </div>
-                    <a id="reSendCode" class="send_code_again disabled">Отправить код еще раз <span id="countdown">3:00</span></a>
+                    <a href="#" id="reSendCode" class="send_code_again disabled">Отправить код еще раз <span id="countdown"></span></a>
                     <button type="submit" class="btn disabled">подтвердить</button>
                 </div>
             </form>
