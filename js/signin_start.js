@@ -206,6 +206,11 @@ jQuery(function() {
 
     CountDown();
 
+    jQuery('.remodal').on('opened', function(e){
+        jQuery(this).find('form input').eq(0).trigger('focus');
+    });
+
+
     function removeRemodalAnimation() {
         jQuery('body').addClass('remodal-overlay-without-animation');
 
