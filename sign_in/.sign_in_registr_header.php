@@ -29,6 +29,7 @@
           integrity="sha512-YdYyWQf8AS4WSB0WWdc3FbQ3Ypdm0QCWD2k4hgfqbQbRCJBEgX0iAegkl2S1Evma5ImaVXLBeUkIlP6hQ1eYKQ=="
           crossorigin="anonymous"/>
     <link rel="stylesheet" href="/css/signin_start.css?t=<?= time(); ?>">
+    <link rel="stylesheet" href="/css/modals.css?t=<?= time(); ?>">
     <link rel="stylesheet" href="/fonts/stylesheets.css?t=12345">
     <link rel="stylesheet" href="/fonts/Lato-new/lato.css">
     <style>
@@ -41,7 +42,7 @@
 <body>
 
 <!--<div class="perfect">-->
-<!--    <img src="/img/registrationfield.png" alt="">-->
+<!--    <img src="/img/registr3840.png" alt="">-->
 <!--</div>-->
 <div class="start_wrapper">
     <div class="standard_wrapper">

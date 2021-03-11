@@ -52,7 +52,7 @@
                 <p class="title">
                     Основной счет
                 </p>
-                <a data-ajax-url href="/transactions.php" class="balance_update">
+                <a href="#" class="balance_update">
                     <img src="/img/update.svg" alt="update">
                 </a>
             </div>
@@ -154,25 +154,25 @@
             </a>
         </li>
         <li>
-            <a href="#" class="select_game">
+            <a href="/select_game.php" class="select_game">
                 <img src="/img/selectgame.svg" alt="selectgame">
                 <span>выбрать игру</span>
             </a>
         </li>
         <li>
-            <a href="#" class="problem_report">
+            <a href="#" class="problem_report" data-remodal-target="problem_report_modal">
                 <img src="/img/info.svg" alt="info">
                 <span>сообщить о проблеме</span>
             </a>
         </li>
         <li>
-            <a href="#" class="session">
+            <a href="#" class="session" data-remodal-target="prolongation_session_modal">
                 <img src="/img/session.svg" alt="session">
                 <span>продлить сессию</span>
             </a>
         </li>
         <li>
-            <a href="#" class="logout">
+            <a href="#" class="logout" data-remodal-target="finish_session_modal">
                 <img src="/img/logout.svg" alt="logout">
                 <span>завершить сессию</span>
             </a>

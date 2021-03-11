@@ -1,6 +1,6 @@
 <?php require __DIR__ . '/.header.php'; ?>
-<div class="transactions_top_wrapper">
-    <div class="transactions_title_wrapper">
+<div class="other_page_top_wrapper">
+    <div class="other_page_title_wrapper">
         <a href="#" class="back">
             <img src="/img/back.svg" alt="arrow-back">
         </a>
