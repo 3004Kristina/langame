@@ -333,4 +333,12 @@ jQuery(function() {
             $input.val(Math.max(res, 10));
         });
     });
+
+    jQuery('#cash_in-input').mask('0 000 000', {reverse: true});
+
+    jQuery('.main_cash_in_modal [data-cash-in]').on('click', function(e){
+        var $button = jQuery(this);
+
+        jQuery('#cash_in-input').val('' + $button.data('cash-in')).trigger('change');
+    });
 });

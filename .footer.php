@@ -232,11 +232,47 @@
         </p>
     </div>
 </div>
+
+<div class="remodal main_cash_in_modal" data-remodal-id="cash_in_modal" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-content">
+        <p class="title">
+            Пополнение баланса
+        </p>
+        <div class="cash_in_form">
+            <form id="modal-cash_in" action="" method="post">
+                <div class="forma">
+                    <div class="form-group" data-placeholder="Введите сумму (₽)" data-label="Сумма пополнения (₽)">
+                        <label for="cash_in-input">
+                            <img src="/img/balans.svg" alt="password">
+                        </label>
+                        <input id="cash_in-input" name="cash_in" type="text" placeholder="" required>
+                        <p>Минимальная сумма 10 руб.</p>
+                    </div>
+                    <div class="select_cash_in_wrapper">
+                        <button type="button" data-cash-in="500">500</button>
+                        <button type="button" data-cash-in="1 000">1 000</button>
+                        <button type="button" data-cash-in="2 000">2 000</button>
+                        <button type="button" data-cash-in="3 000">3 000</button>
+                    </div>
+                    <p class="instruction">
+                        Денежные средства на балансе<br>
+                        возврату не подлежат!
+                    </p>
+                    <button type="submit" class="btn disabled">ок</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/promise-polyfill/8.2.0/polyfill.min.js"
         integrity="sha512-YK+bAjUuYdjPksbGQIIIsUn5hgYFsc+nXgx21Wwby9Mv+rJd8WZH2FRe1RdlTjFu1vxlGia9/RqmUMcZtX+BrA=="
         crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+        integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
+        crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.scrollbar/0.2.11/jquery.scrollbar.min.js"
         integrity="sha512-5AcaBUUUU/lxSEeEcruOIghqABnXF8TWqdIDXBZ2SNEtrTGvD408W/ShtKZf0JNjQUfOiRBJP+yHk6Ab2eFw3Q=="
         crossorigin="anonymous"></script>
