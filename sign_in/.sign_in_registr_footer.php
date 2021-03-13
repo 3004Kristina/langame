@@ -115,10 +115,10 @@
             <form id="modal-set-new-password" action="" method="post">
                 <div class="forma">
                     <div class="form-group" data-placeholder="Введите новый пароль" data-label="Пароль">
-                        <label for="password-input">
+                        <label for="set-new-password-input">
                             <img src="/img/password.svg" alt="password">
                         </label>
-                        <input id="password-input" name="password" type="password" placeholder="" required>
+                        <input id="set-new-password-input" name="password" type="password" placeholder="" required>
                         <span data-action="show_password" class="inspect_pass">показать</span>
                     </div>
                     <button type="submit" class="btn disabled">Восстановить</button>

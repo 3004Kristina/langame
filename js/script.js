@@ -166,8 +166,10 @@ jQuery(function() {
 
         $search.on('input focus change blur', function(e) {
             if ($search.is(':focus') || !!e.target.value) {
+                $search.addClass('searching');
                 $searchPlaceholder.addClass('hidden');
             } else {
+                $search.removeClass('searching');
                 $searchPlaceholder.removeClass('hidden');
             }
         });
@@ -269,8 +271,28 @@ jQuery(function() {
                 jQuery('body').removeClass('remodal-content-loading');
 
                 jQuery('[data-remodal-id="problem_report_modal"]').remodal().close();
+                jQuery('#modal-problem_report .symbol_counter').text('0');
             }
         });
+    });
+
+    jQuery('#modal-problem_report textarea').on('input',function(){
+        var $this = jQuery(this),
+            $symbol_counter = jQuery('#modal-problem_report .symbol_counter'),
+            max = 1000,
+            len = $this.val().length;
+
+        if (len >= max) {
+            $this.val($this.val().substr(0, max));
+            $symbol_counter.text(max);
+
+        } else{
+            $symbol_counter.text(len);
+        }
+    });
+
+    jQuery('.main_problem_report_modal').on('closed', function(e){
+        jQuery('.main_problem_report_modal .symbol_counter').text('0');
     });
 
     jQuery('.remodal').on('closed', function(e) {
@@ -278,5 +300,37 @@ jQuery(function() {
             .trigger('reset')
             .find('input, select, textarea')
             .trigger('change');
+    });
+
+    jQuery('.main_start_session_modal .start_content').on('click', function(e){
+        var $start_content = jQuery(this);
+
+        $start_content.closest('label').find('.select_time').slideDown();
+
+        jQuery('.main_start_session_modal .start_content')
+            .not($start_content)
+            .closest('label')
+            .find('.select_time').slideUp();
+    });
+
+
+
+    jQuery('.qty').each(function() {
+        let $qty = jQuery(this),
+            $input = $qty.find('input[type="number"]'),
+            $right = $qty.find('.right'),
+            $left = $qty.find('.left');
+
+        $right.on('click', function() {
+            let res = $input.val();
+            res = +res + 10;
+            $input.val(res);
+        });
+
+        $left.on('click', function() {
+            let res = $input.val();
+            res = +res - 10;
+            $input.val(Math.max(res, 10));
+        });
     });
 });

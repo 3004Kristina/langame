@@ -495,7 +495,7 @@ html, body {
                         span.error {
                             display: none;
                             position: absolute;
-                            bottom: -20px;
+                            bottom: -22px;
                             border: none;
                             font-family: 'Lato', sans-serif;
                             font-style: normal;
@@ -509,6 +509,8 @@ html, body {
                         &.error {
                             border: 6px solid rgba(220, 0, 0, 0.06);
                             border-radius: 9px;
+                            margin-bottom: 22px;
+                            margin-top: -6px;
 
                             & input {
                                 background-color: #ffffff;
@@ -516,20 +518,22 @@ html, body {
                                 box-shadow: 0 0 9px rgba(220, 0, 0, 0.4);
                                 background-image: url("../img/error.svg");
                                 background-repeat: no-repeat;
-                                background-position: center right 15px;
+                                background-position: center right 7px;
                             }
                         }
 
                         &.success {
                             border: 6px solid rgba(0, 174, 49, 0.06);
                             border-radius: 9px;
+                            margin-bottom: 22px;
+                            margin-top: -6px;
 
                             & input {
                                 background-color: #ffffff;
                                 border: 2px solid #00ae31;
                                 background-image: url("../img/sucesses.svg");
                                 background-repeat: no-repeat;
-                                background-position: center right 15px;
+                                background-position: center right 7px;
                             }
                         }
                     }
@@ -555,13 +559,14 @@ html, body {
                             &.success {
                                 border: 6px solid rgba(0, 174, 49, 0.06);
                                 border-radius: 9px;
+                                margin-bottom: 25px;
 
                                 & input {
                                     background-color: #ffffff;
                                     border: 2px solid #00ae31;
                                     background-image: url("../img/sucesses.svg");
                                     background-repeat: no-repeat;
-                                    background-position: center right 15px;
+                                    background-position: center right 7px;
                                 }
 
                                 & .select_wrapper .select2 .selection .select2-selection {
@@ -572,7 +577,7 @@ html, body {
                                         height: 83px;
                                         background-image: url("../img/sucesses.svg");
                                         background-repeat: no-repeat;
-                                        background-position: center right 15px;
+                                        background-position: center right 7px;
                                     }
 
                                     .select2-selection__arrow {
@@ -584,6 +589,7 @@ html, body {
                             &.error {
                                 border: 6px solid rgba(220, 0, 0, 0.06);
                                 border-radius: 9px;
+                                margin-bottom: 25px;
 
                                 & input {
                                     background-color: #ffffff;
@@ -591,7 +597,7 @@ html, body {
                                     box-shadow: 0 0 9px rgba(220, 0, 0, 0.4);
                                     background-image: url("../img/error.svg");
                                     background-repeat: no-repeat;
-                                    background-position: center right 15px;
+                                    background-position: center right 7px;
                                 }
                             }
 
@@ -616,7 +622,7 @@ html, body {
                             span.error {
                                 display: none;
                                 position: absolute;
-                                bottom: -20px;
+                                bottom: -22px;
                                 border: none;
                                 font-family: 'Lato', sans-serif;
                                 font-style: normal;
@@ -1023,11 +1029,29 @@ html, body {
                     .forma {
                         .form-group-item {
                             margin-bottom: 25px;
+
+                            &.error {
+                                margin-bottom: 19px;
+                                margin-top: -20px;
+                            }
+
+                            &.success {
+                                margin-bottom: 19px;
+                                margin-top: -20px;
+                            }
                         }
 
                         .form-group-list {
                             .form-group {
                                 margin: 0 19px 25px;
+
+                                &.success {
+                                    margin-bottom: 22px;
+                                }
+
+                                &.error {
+                                    margin-bottom: 22px;
+                                }
                             }
                         }
 
@@ -1287,7 +1311,7 @@ html, body {
                             span.error {
                                 display: none;
                                 position: absolute;
-                                bottom: -25px;
+                                bottom: -28px;
                                 border: none;
                                 font-family: 'Lato', sans-serif;
                                 font-style: normal;
@@ -1301,6 +1325,7 @@ html, body {
                             &.error {
                                 border: 6px solid rgba(220, 0, 0, 0.06);
                                 border-radius: 9px;
+                                margin-bottom: 39px;
 
                                 & input {
                                     background-color: #ffffff;
@@ -1309,12 +1334,14 @@ html, body {
                                     background-image: url("../img/error.svg");
                                     background-repeat: no-repeat;
                                     background-position: center right 15px;
+                                    background-size: 20px;
                                 }
                             }
 
                             &.success {
                                 border: 6px solid rgba(0, 174, 49, 0.06);
                                 border-radius: 9px;
+                                margin-bottom: 39px;
 
                                 & input {
                                     background-color: #ffffff;
@@ -1322,6 +1349,7 @@ html, body {
                                     background-image: url("../img/sucesses.svg");
                                     background-repeat: no-repeat;
                                     background-position: center right 15px;
+                                    background-size: 20px;
                                 }
                             }
                         }
@@ -1350,6 +1378,7 @@ html, body {
                                 &.success {
                                     border: 6px solid rgba(0, 174, 49, 0.06);
                                     border-radius: 9px;
+                                    margin-bottom: 39px;
 
                                     & input {
                                         background-color: #ffffff;
@@ -1357,6 +1386,7 @@ html, body {
                                         background-image: url("../img/sucesses.svg");
                                         background-repeat: no-repeat;
                                         background-position: center right 15px;
+                                        background-size: 20px;
                                     }
 
                                     & .select_wrapper .select2 .selection .select2-selection {
@@ -1364,10 +1394,11 @@ html, body {
                                             background-color: #ffffff;
                                             border: 2px solid #00ae31;
                                             border-radius: 8px;
-                                            height: 83px;
+                                            height: 110px;
                                             background-image: url("../img/sucesses.svg");
                                             background-repeat: no-repeat;
                                             background-position: center right 15px;
+                                            background-size: 20px;
                                         }
 
                                         .select2-selection__arrow {
@@ -1379,6 +1410,7 @@ html, body {
                                 &.error {
                                     border: 6px solid rgba(220, 0, 0, 0.06);
                                     border-radius: 9px;
+                                    margin-bottom: 39px;
 
                                     & input {
                                         background-color: #ffffff;
@@ -1387,6 +1419,7 @@ html, body {
                                         background-image: url("../img/error.svg");
                                         background-repeat: no-repeat;
                                         background-position: center right 15px;
+                                        background-size: 20px;
                                     }
                                 }
 
@@ -1399,7 +1432,7 @@ html, body {
                                 span.error {
                                     display: none;
                                     position: absolute;
-                                    bottom: -25px;
+                                    bottom: -28px;
                                     border: none;
                                     font-family: 'Lato', sans-serif;
                                     font-style: normal;
@@ -1448,8 +1481,12 @@ html, body {
                                         }
 
                                         .select2-selection__arrow {
-                                            top: 52px;
-                                            right: 15px;
+                                            top: 47px;
+                                            right: 24px;
+
+                                            b{
+                                                border-width: 7px 6px 0 6px;
+                                            }
                                         }
 
                                         .select2-selection__placeholder {
@@ -1865,6 +1902,7 @@ html, body {
                             &.error {
                                 border: 6px solid rgba(220, 0, 0, 0.06);
                                 border-radius: 9px;
+                                margin-bottom: 60px;
 
                                 & input {
                                     background-color: #ffffff;
@@ -1879,6 +1917,7 @@ html, body {
                             &.success {
                                 border: 6px solid rgba(0, 174, 49, 0.06);
                                 border-radius: 9px;
+                                margin-bottom: 60px;
 
                                 & input {
                                     background-color: #ffffff;
@@ -1886,6 +1925,7 @@ html, body {
                                     background-image: url("../img/sucesses.svg");
                                     background-repeat: no-repeat;
                                     background-position: center right 15px;
+                                    background-size: 25px;
                                 }
                             }
                         }
@@ -1914,6 +1954,7 @@ html, body {
                                 &.success {
                                     border: 6px solid rgba(0, 174, 49, 0.06);
                                     border-radius: 9px;
+                                    margin-bottom: 60px;
 
                                     & input {
                                         background-color: #ffffff;
@@ -1921,6 +1962,7 @@ html, body {
                                         background-image: url("../img/sucesses.svg");
                                         background-repeat: no-repeat;
                                         background-position: center right 15px;
+                                        background-size: 25px;
                                     }
 
                                     & .select_wrapper .select2 .selection .select2-selection {
@@ -1928,10 +1970,11 @@ html, body {
                                             background-color: #ffffff;
                                             border: 2px solid #00ae31;
                                             border-radius: 8px;
-                                            height: 83px;
+                                            height: 169px;
                                             background-image: url("../img/sucesses.svg");
                                             background-repeat: no-repeat;
                                             background-position: center right 15px;
+                                            background-size: 25px;
                                         }
 
                                         .select2-selection__arrow {
@@ -1943,6 +1986,7 @@ html, body {
                                 &.error {
                                     border: 6px solid rgba(220, 0, 0, 0.06);
                                     border-radius: 9px;
+                                    margin-bottom: 60px;
 
                                     & input {
                                         background-color: #ffffff;
@@ -1951,6 +1995,7 @@ html, body {
                                         background-image: url("../img/error.svg");
                                         background-repeat: no-repeat;
                                         background-position: center right 15px;
+                                        background-size: 25px;
                                     }
                                 }
 

@@ -308,7 +308,7 @@ html, body {
                 .title {
                     margin: 0;
                     font-style: normal;
-                    font-weight: 300;
+                    font-weight: 400;
                     font-size: 16px;
                     line-height: normal;
                     text-transform: uppercase;
@@ -341,7 +341,7 @@ html, body {
                     .user_name {
                         span {
                             font-style: normal;
-                            font-weight: 700;
+                            font-weight: 900;
                             font-size: 18px;
                             line-height: 23px;
                             color: #000000;
@@ -406,7 +406,7 @@ html, body {
 
                             span {
                                 font-style: normal;
-                                font-weight: 300;
+                                font-weight: 400;
                                 font-size: 15px;
                                 line-height: normal;
                                 color: #000000;
@@ -422,7 +422,7 @@ html, body {
                 .title {
                     margin: 0;
                     font-style: normal;
-                    font-weight: 300;
+                    font-weight: 400;
                     font-size: 16px;
                     line-height: normal;
                     text-transform: uppercase;
@@ -445,19 +445,19 @@ html, body {
 
                         span {
                             font-style: normal;
-                            font-weight: 300;
+                            font-weight: 400;
                             font-size: 15px;
                             line-height: normal;
                             color: #000000;
 
                             &.status_type {
-                                font-weight: 700;
+                                font-weight: 800;
                                 text-transform: uppercase;
 
                             }
 
                             &.status_timer {
-                                font-weight: 700;
+                                font-weight: 800;
                             }
                         }
                     }
@@ -487,6 +487,15 @@ html, body {
 
                             &:hover img {
                                 opacity: 0.7;
+                            }
+
+                            &:active, &:focus{
+                                img{
+                                    animation-name: balance_update;
+                                    animation-duration: 2s;
+                                    animation-iteration-count: 1;
+                                    animation-timing-function: linear;
+                                }
                             }
                         }
                     }
@@ -655,7 +664,7 @@ html, body {
 
                         span {
                             font-style: normal;
-                            font-weight: bold;
+                            font-weight: 800;
                             font-size: 14px;
                             line-height: normal;
                             letter-spacing: 0.01em;
@@ -698,10 +707,11 @@ html, body {
 
             span {
                 font-style: normal;
-                font-weight: 400;
+                font-weight: 500;
                 font-size: 15px;
                 line-height: normal;
                 color: #000000;
+                letter-spacing: 0.2px;
 
                 &.upper {
                     text-transform: uppercase;
@@ -871,7 +881,7 @@ html, body {
         .select_game_main_content_wrapper {
 
             .select_game_form_wrapper {
-                margin: 38px 0 39px;
+                margin: 38px 0 0;
 
                 form {
                     .search_wrapper {
@@ -885,8 +895,14 @@ html, body {
                             background: #ffffff;
                             box-shadow: 0 4px 13px rgba(0, 0, 0, 0.03);
                             border-radius: 35px;
-                            border: none;
+                            font-weight: 900;
+                            letter-spacing: 0.8px;
+                            border: 1px solid transparent;
                             outline: none;
+
+                            &.searching{
+                                border: 1px solid #DC0000;
+                            }
                         }
 
                         label {
@@ -992,6 +1008,7 @@ html, body {
                 }
 
                 .sliders_wrapper {
+                    margin-top: 39px;
                     .game_carousel_item {
                         position: relative;
                         padding-bottom: 13px;
@@ -1117,26 +1134,6 @@ html, body {
                     padding: 26px 0;
                     column-count: 4;
 
-                    .search_by_input_result {
-                        margin: 0 0 27px;
-                        padding: 0 0 27px;
-                        border-bottom: 1px solid rgba(0, 0, 0, 0.14);
-
-                        h3{
-                            margin: 0;
-                            font-style: normal;
-                            font-weight: 500;
-                            font-size: 17px;
-                            line-height: 1;
-                            color: #121212;
-                        }
-
-                        span{
-                            font-weight: 700;
-                        }
-
-                    }
-
                     .games_group {
                         margin: 0 0 20px;
                         break-inside: avoid;
@@ -1213,7 +1210,7 @@ html, body {
                                         content: '';
                                         display: block;
                                         position: absolute;
-                                        top: -4px;
+                                        top: 2px;
                                         left: -8px;
                                         width: 30px;
                                         height: 30px;
@@ -1241,6 +1238,31 @@ html, body {
                         &.hidden {
                             display: none !important;
                         }
+                    }
+
+                    .search_by_input_result {
+                        margin: 24px 0 30px;
+                        padding: 0 0 27px;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+
+                        h3 {
+                            margin: 0;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 17px;
+                            line-height: 1;
+                            color: #121212;
+                            letter-spacing: 0.5px;
+                        }
+
+                        span {
+                            font-weight: 700;
+                        }
+
+                    }
+
+                    &.search_by_group{
+                        margin-top: 50px;
                     }
 
                     &.search_by_group,
@@ -1715,14 +1737,15 @@ html, body {
             /*! SELECT GAME PAGE START */
             .select_game_main_content_wrapper {
                 .select_game_form_wrapper {
-                    margin: 51px 0 39px;
+                    margin: 51px 0 0;
 
                     form {
                         .search_wrapper {
                             input {
                                 display: block;
-                                padding: 22px 68px 20px;
+                                padding: 20px 68px 17px;
                                 border-radius: 47px;
+                                font-size: 24px;
                             }
 
                             label {
@@ -1731,9 +1754,8 @@ html, body {
                                 font-size: 17px;
                             }
 
-
                             &:before {
-                                top: 20px;
+                                top: 23px;
                                 left: 29px;
                                 width: 20px;
                                 height: 20px;
@@ -1742,7 +1764,7 @@ html, body {
                         }
 
                         .checkbox_wrapper {
-                            margin-top: 32px;
+                            margin-top: 29px;
 
                             .checkbox_item {
                                 margin-right: 17px;
@@ -1768,68 +1790,69 @@ html, body {
                         font-size: 22px;
                     }
 
-                    .game_carousel_item {
+                    .sliders_wrapper {
+                        margin-top: 50px;
+                        .game_carousel_item {
+                            a {
+                                img {
+                                    border-radius: 18px;
+                                    width: 260px;
+                                    height: 175px;
+                                }
 
-                        a {
-
-                            img {
-                                border-radius: 18px;
-                                width: 260px;
-                                height: 175px;
+                                p {
+                                    font-size: 20px;
+                                }
                             }
 
-                            p {
-                                font-size: 20px;
+                            .slick-arrow {
+                                width: 38px;
+                                height: 38px;
+                                top: -48px;
+
+                                .fa {
+                                    font-size: 14px;
+                                }
+
+                                &.slick-prev {
+                                    right: 88px;
+                                }
+
+                                &.slick-next {
+                                    right: 35px;
+                                }
+                            }
+                        }
+
+                        .hot_new_game_wrapper {
+                            margin: 0 0 35px;
+
+                            .title {
+
+                                &:before {
+                                    width: 13px;
+                                    height: 21px;
+                                    top: 0;
+                                    left: 0;
+                                    background-size: contain;
+                                }
                             }
                         }
 
-                        .slick-arrow {
-                            width: 38px;
-                            height: 38px;
-                            top: -48px;
+                        .popular_game_wrapper {
+                            padding-bottom: 13px;
 
-                            .fa {
-                                font-size: 14px;
+                            .title {
+                                margin-bottom: 23px;
+
+                                &:before {
+                                    width: 20px;
+                                    height: 18px;
+                                    top: 3px;
+                                    left: 2px;
+                                }
+
                             }
-
-                            &.slick-prev {
-                                right: 88px;
-                            }
-
-                            &.slick-next {
-                                right: 35px;
-                            }
-                        }
-                    }
-
-                    .hot_new_game_wrapper {
-                        margin: 0 0 35px;
-
-                        .title {
-
-                            &:before {
-                                width: 13px;
-                                height: 21px;
-                                top: 0;
-                                left: 0;
-                                background-size: contain;
-                            }
-                        }
-                    }
-
-                    .popular_game_wrapper {
-                        padding-bottom: 13px;
-
-                        .title {
-                            margin-bottom: 23px;
-
-                            &:before {
-                                width: 20px;
-                                height: 18px;
-                                top: 3px;
-                                left: 2px;
-                            }
-
                         }
                     }
 
@@ -1896,6 +1919,28 @@ html, body {
                                     }
                                 }
                             }
+                        }
+
+                        .search_by_input_result {
+                            margin: 29px 0 49px;
+                            padding: 0 0 45px;
+                            border-bottom: 1px solid rgba(0,0,0,.14);
+
+                            h3 {
+                                font-size: 22px;
+                                line-height: 1;
+                                color: #121212;
+                                letter-spacing: 0.6px;
+                            }
+
+                            span {
+                                font-weight: 700;
+                            }
+
+                        }
+
+                        &.search_by_group{
+                            margin-top: 38px;
                         }
                     }
                 }
@@ -2268,25 +2313,26 @@ html, body {
             /*! SELECT GAME PAGE START */
             .select_game_main_content_wrapper {
                 .select_game_form_wrapper {
-                    margin: 80px 0 70px;
+                    margin: 80px 0 0;
 
                     form {
                         .search_wrapper {
                             input {
                                 display: block;
-                                padding: 32px 102px 30px;
+                                padding: 28px 102px 26px;
                                 border-radius: 56px;
+                                font-size: 34px;
                             }
 
                             label {
-                                top: 25px;
+                                top: 30px;
                                 left: 103px;
-                                font-size: 25px;
+                                font-size: 26px;
                             }
 
 
                             &:before {
-                                top: 27px;
+                                top: 29px;
                                 left: 39px;
                                 width: 30px;
                                 height: 30px;
@@ -2294,7 +2340,7 @@ html, body {
                         }
 
                         .checkbox_wrapper {
-                            margin-top: 57px;
+                            margin-top: 44px;
 
                             .checkbox_item {
                                 margin-right: 21px;
@@ -2322,67 +2368,70 @@ html, body {
                         padding-left: 60px;
                     }
 
-                    .game_carousel_item {
-                        padding-bottom: 20px;
+                    .sliders_wrapper{
+                        margin-top: 70px;
+                        .game_carousel_item {
+                            padding-bottom: 20px;
 
-                        a {
-                            img {
-                                border-radius: 25px;
-                                width: 400px;
-                                height: 270px;
+                            a {
+                                img {
+                                    border-radius: 25px;
+                                    width: 400px;
+                                    height: 270px;
+                                }
+
+                                p {
+                                    font-size: 30px;
+                                }
                             }
 
-                            p {
-                                font-size: 30px;
+                            .slick-arrow {
+                                width: 60px;
+                                height: 60px;
+                                top: -85px;
+
+                                .fa {
+                                    font-size: 24px;
+                                }
+
+                                &.slick-prev {
+                                    right: 142px;
+                                }
+
+                                &.slick-next {
+                                    right: 50px;
+                                }
+                            }
+                        }
+
+                        .hot_new_game_wrapper {
+                            margin: 0 0 55px;
+
+                            .title {
+                                &:before {
+                                    width: 23px;
+                                    height: 31px;
+                                    top: 0;
+                                    left: 0;
+                                    background-size: contain;
+                                }
                             }
                         }
 
-                        .slick-arrow {
-                            width: 60px;
-                            height: 60px;
-                            top: -85px;
+                        .popular_game_wrapper {
+                            padding-bottom: 13px;
 
-                            .fa {
-                                font-size: 24px;
+                            .title {
+                                margin-bottom: 40px;
+
+                                &:before {
+                                    width: 30px;
+                                    height: 28px;
+                                    top: 3px;
+                                    left: 2px;
+                                }
+
                             }
-
-                            &.slick-prev {
-                                right: 142px;
-                            }
-
-                            &.slick-next {
-                                right: 50px;
-                            }
-                        }
-                    }
-
-                    .hot_new_game_wrapper {
-                        margin: 0 0 55px;
-
-                        .title {
-                            &:before {
-                                width: 23px;
-                                height: 31px;
-                                top: 0;
-                                left: 0;
-                                background-size: contain;
-                            }
-                        }
-                    }
-
-                    .popular_game_wrapper {
-                        padding-bottom: 13px;
-
-                        .title {
-                            margin-bottom: 40px;
-
-                            &:before {
-                                width: 30px;
-                                height: 28px;
-                                top: 3px;
-                                left: 2px;
-                            }
-
                         }
                     }
 
@@ -2406,13 +2455,13 @@ html, body {
                                     position: relative;
 
                                     a {
-                                        padding: 8px 0 8px 40px;
+                                        padding: 8px 0 8px 60px;
                                         font-size: 32px;
                                     }
 
                                     &.origin {
                                         &:before {
-                                            top: 4px;
+                                            top: 12px;
                                             left: 1px;
                                             width: 28px;
                                             height: 28px;
@@ -2422,7 +2471,7 @@ html, body {
 
                                     &.steam {
                                         &:before {
-                                            top: 5px;
+                                            top: 12px;
                                             left: 0;
                                             width: 28px;
                                             height: 28px;
@@ -2432,23 +2481,37 @@ html, body {
 
                                     &.epicgames {
                                         &:before {
-                                            top: 6px;
-                                            left: -6px;
-                                            width: 32px;
-                                            height: 32px;
+                                            top: 10px;
+                                            left: -12px;
+                                            width: 50px;
+                                            height: 50px;
                                         }
                                     }
 
                                     &.battlenet {
                                         &:before {
-                                            top: 5px;
-                                            left: -3px;
-                                            width: 22px;
-                                            height: 22px;
+                                            top: 10px;
+                                            left: -5px;
+                                            width: 34px;
+                                            height: 34px;
                                         }
                                     }
                                 }
                             }
+                        }
+
+                        .search_by_input_result {
+                            margin: 36px 0 55px;
+                            padding: 0 0 55px;
+
+                            h3 {
+                                font-size: 34px;
+                                letter-spacing: 0.8px;
+                            }
+                        }
+
+                        &.search_by_group{
+                            margin-top: 70px;
                         }
                     }
                 }
@@ -2463,6 +2526,16 @@ body .scrollbar-rail > .scroll-element .scroll-bar {
     opacity: 0.3;
     border-radius: 44px;
     width: 10px;
+}
+
+@keyframes balance_update {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 

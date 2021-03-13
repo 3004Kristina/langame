@@ -42,7 +42,7 @@
 <body>
 
 <!--<div class="perfect">-->
-<!--    <img src="/img/registr3840.png" alt="">-->
+<!--    <img src="/img/registrationfield.png" alt="">-->
 <!--</div>-->
 <div class="start_wrapper">
     <div class="standard_wrapper">

@@ -1,4 +1,5 @@
 jQuery(function() {
+    var forgotFormPasswordInterval;
 
     jQuery(document).on('dragstart', 'img', function(event) {
         event.preventDefault();
@@ -75,6 +76,8 @@ jQuery(function() {
                 removeRemodalAnimation();
 
                 jQuery('[data-remodal-id="code_recovery_modal"]').remodal().open();
+
+                clearInterval(forgotFormPasswordInterval);
                 startCountDown();
             }
         });
@@ -190,13 +193,14 @@ jQuery(function() {
 
         $reSendCode.addClass('disabled');
 
-        var interval = setInterval(function() {
+        forgotFormPasswordInterval = setInterval(function() {
             time--;
             $countdown.text(getTimeText(time));
             if (time === 0) {
                 $reSendCode.removeClass('disabled');
                 $countdown.text(' ');
-                clearInterval(interval);
+
+                clearInterval(forgotFormPasswordInterval);
             }
         }, 1000);
     }

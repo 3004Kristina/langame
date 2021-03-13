@@ -12,6 +12,10 @@
             <form id="modal-problem_report" action="" method="post">
                 <div class="forma">
                     <textarea id="problem_report-text" name="user_problem" type="text" placeholder="" required></textarea>
+                    <div class="symbol_counter_wrapper">
+                        <span class="symbol_counter">0</span>
+                        <span>/1000</span>
+                    </div>
                     <button type="submit" class="btn disabled">Отправить</button>
                 </div>
             </form>
@@ -137,6 +141,95 @@
                 </div>
             </form>
         </div>
+    </div>
+</div>
+
+<div class="remodal main_start_session_modal" data-remodal-id="start_session_modal" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-content">
+        <p class="title">
+            Старт сесии
+        </p>
+        <p class="instruction">Укажите пакет</p>
+        <div class="start_session_form">
+            <form id="modal-start_session" action="" method="post">
+                <div class="forma">
+                    <div class="checkbox_wrapper">
+                        <label>
+                            <input type="radio" name="package">
+                            <div class="start_content">
+                                <span class="position">Произвольное время</span>
+                                <span class="price">1,67 руб/мин.</span>
+                            </div>
+                            <div class="select_time">
+                                <p>Введите время в минутах. 1 час = 60 минут</p>
+                                <div class="qty">
+                                    <span class="left"></span>
+                                    <input type="number" name="time-qty" value="10" step="10" min="10">
+                                    <span class="right"></span>
+                                </div>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="package">
+                            <div class="start_content">
+                                <span class="position">Пакет на 3 часа</span>
+                                <span class="price">270 ₽</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="package">
+                            <div class="start_content">
+                                <span class="position">Пакет на 5 часов</span>
+                                <span class="price">400 ₽</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="package">
+                            <div class="start_content">
+                                <span class="position">Пакет День (09:00 - 16:00)</span>
+                                <span class="price">450 ₽</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="package">
+                            <div class="start_content">
+                                <span class="position">Пакет Вечер (16:00-22:00)</span>
+                                <span class="price">450 ₽</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="package">
+                            <div class="start_content">
+                                <span class="position">Пакет Ночь (22:00 - 08:00)</span>
+                                <span class="price">550 ₽</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="package">
+                            <div class="start_content">
+                                <span class="position">Пакет Сутки 24ч</span>
+                                <span class="price">1400 ₽</span>
+                            </div>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn disabled">Начать</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="remodal main_end_of_session_modal" data-remodal-id="end_of_session_modal" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-content">
+        <p class="title">
+            СЕССИЯ ОКОНЧЕНА.
+        </p>
+        <p class="instruction">
+            Выберите новый пакет или завершите сессию.<br>
+            Если сессия не будет продлена, компьютер перезагрузится в течение 15 минут, и все пользовательские данные будут стёрты.
+        </p>
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/promise-polyfill/8.2.0/polyfill.min.js"

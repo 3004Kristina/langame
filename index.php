@@ -83,7 +83,7 @@
     </div>
     <div class="main_content_item_right">
         <div class="tariffs_info">
-            <div class="tariffs_info_title">
+            <div class="tariffs_info_title" data-remodal-target="end_of_session_modal">
                 Тарифы, доступные на данном ПК
             </div>
             <div class="tariffs_info_list">
@@ -148,7 +148,7 @@
 <div class="main_bottom_menu_wrapper">
     <ul class="main_bottom_menu">
         <li>
-            <a href="#" class="back">
+            <a href="#" class="back" data-remodal-target="start_session_modal">
                 <img src="/img/device.svg" alt="device">
                 <span>вернутся на рабочий стол</span>
             </a>
