@@ -7,6 +7,10 @@ html, body {
     padding: 0;
 }
 
+.system-svg-icons {
+    display: none;
+}
+
 *, a, input, select, textarea, button {
     font-family: 'Lato', sans-serif;
 }
@@ -489,8 +493,8 @@ html, body {
                                 opacity: 0.7;
                             }
 
-                            &:active, &:focus{
-                                img{
+                            &:active, &:focus {
+                                img {
                                     animation-name: balance_update;
                                     animation-duration: 2s;
                                     animation-iteration-count: 1;
@@ -672,7 +676,7 @@ html, body {
                             color: #000000;
                         }
 
-                        img {
+                        img, svg {
                             display: block;
                             margin-bottom: 29px;
                         }
@@ -693,8 +697,26 @@ html, body {
                             background: #f0fff9;
                         }
 
+                        &.start {
+                            background: #f0fff9;
+                        }
+
                         &.logout {
                             background: #ffeded;
+                        }
+
+                        &.disabled {
+                            pointer-events: none;
+                            background: #FFFFFF;
+                            box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.04);
+
+                            span{
+                                opacity: 0.5;
+                            }
+
+                            svg path {
+                                filter: url(#grayscale);
+                            }
                         }
                     }
                 }
@@ -900,8 +922,8 @@ html, body {
                             border: 1px solid transparent;
                             outline: none;
 
-                            &.searching{
-                                border: 1px solid #DC0000;
+                            &.searching {
+                                border: 1px solid #dc0000;
                             }
                         }
 
@@ -1009,6 +1031,7 @@ html, body {
 
                 .sliders_wrapper {
                     margin-top: 39px;
+
                     .game_carousel_item {
                         position: relative;
                         padding-bottom: 13px;
@@ -1261,7 +1284,7 @@ html, body {
 
                     }
 
-                    &.search_by_group{
+                    &.search_by_group {
                         margin-top: 50px;
                     }
 
@@ -1348,8 +1371,15 @@ html, body {
                                 font-size: 13px;
                             }
 
-                            img {
-                                margin-bottom: 24px;
+                            img, svg {
+                                display: inline-block;
+                                margin: 0 0 24px;
+                            }
+
+                            &.disabled {
+                                svg path {
+                                    filter: url(#grayscale);
+                                }
                             }
                         }
                     }
@@ -1591,7 +1621,7 @@ html, body {
                                 letter-spacing: 0.01em;
                             }
 
-                            img {
+                            img, svg {
                                 width: 50px;
                                 height: 50px;
                                 display: block;
@@ -1792,6 +1822,7 @@ html, body {
 
                     .sliders_wrapper {
                         margin-top: 50px;
+
                         .game_carousel_item {
                             a {
                                 img {
@@ -1924,7 +1955,7 @@ html, body {
                         .search_by_input_result {
                             margin: 29px 0 49px;
                             padding: 0 0 45px;
-                            border-bottom: 1px solid rgba(0,0,0,.14);
+                            border-bottom: 1px solid rgba(0, 0, 0, .14);
 
                             h3 {
                                 font-size: 22px;
@@ -1939,13 +1970,60 @@ html, body {
 
                         }
 
-                        &.search_by_group{
+                        &.search_by_group {
                             margin-top: 38px;
                         }
                     }
                 }
             }
             /*! SELECT GAME PAGE END */
+        }
+
+        @media (min-width: 2560px) and (min-height: 1550px) and (max-height: 1700px) {
+            width: calc(100% - 330px);
+            height: 100vh;
+            border-radius: 58px;
+            padding: 66px 60px 0;
+
+            /*! MAIN PAGE START */
+            .main_content_wrapper {
+                padding-top: 60px;
+
+                .main_content_item_left {
+                    margin-right: 44px;
+
+                    .user_info {
+                        margin-bottom: 87px;
+
+                        .user_name {
+                            span {
+                                font-size: 27px;
+                            }
+                        }
+                    }
+
+                    .session_info {
+                        margin: 80px 0 50px;
+                    }
+                }
+
+                .main_content_item_middle {
+                    margin-right: 62px;
+
+                    .balance_info {
+                        margin: 45px 0 49px;
+                    }
+                }
+            }
+
+            .main_bottom_menu_wrapper {
+                margin-top: 85px;
+            }
+
+            .main_signature {
+                margin-top: 100px;
+            }
+            /*! MAIN PAGE END */
         }
 
         @media (min-width: 3840px) {
@@ -2173,7 +2251,7 @@ html, body {
                                 letter-spacing: 0.04em;
                             }
 
-                            img {
+                            img, svg {
                                 width: 73px;
                                 height: auto;
                                 display: block;
@@ -2368,8 +2446,9 @@ html, body {
                         padding-left: 60px;
                     }
 
-                    .sliders_wrapper{
+                    .sliders_wrapper {
                         margin-top: 70px;
+
                         .game_carousel_item {
                             padding-bottom: 20px;
 
@@ -2510,7 +2589,7 @@ html, body {
                             }
                         }
 
-                        &.search_by_group{
+                        &.search_by_group {
                             margin-top: 70px;
                         }
                     }

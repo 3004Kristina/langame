@@ -1648,6 +1648,53 @@ html, body {
         }
     }
 
+    @media (min-width: 2560px) and (min-height: 1550px) and (max-height: 1700px) {
+        .standard_wrapper {
+            top: 130px;
+            left: 170px;
+
+            .standard_number {
+                font-size: 210px;
+            }
+
+            .standard_title {
+                font-size: 54px;
+            }
+        }
+
+        /*! AUTHORIZATION PAGE START */
+        .sign_in_start_content {
+            padding: 290px 0 0;
+
+            .sign_in_form_wrapper {
+                margin-top: 95px;
+            }
+
+            .registration_wrapper {
+                margin: 105px auto 120px;
+            }
+
+            .app_install_wrapper {
+                margin-bottom: 185px;
+            }
+        }
+        /*! AUTHORIZATION PAGE END */
+
+        /*! REGISTRATION PAGE START */
+        .registration_start_content {
+            padding: 175px 0 0;
+
+            .back_to_main_page {
+                margin: 63px 0 135px -7px;
+            }
+
+            .decor {
+                margin-bottom: 290px;
+            }
+        }
+        /*! REGISTRATION PAGE END */
+    }
+
     @media (min-width: 3840px) {
         .standard_wrapper {
             top: 158px;

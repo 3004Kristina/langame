@@ -1,53 +1,7 @@
 jQuery(function() {
     var forgotFormPasswordInterval;
 
-    jQuery(document).on('dragstart', 'img', function(event) {
-        event.preventDefault();
-    });
 
-    jQuery('[data-placeholder][data-label]').on('input change focus blur', 'input', function(e) {
-        var $input = jQuery(this),
-            $formGroup = $input.closest('[data-placeholder][data-label]');
-        if ($input.is(':focus') || !!e.target.value) {
-            $formGroup.addClass('filled');
-        } else {
-            $formGroup.removeClass('filled');
-        }
-    });
-
-    jQuery('input[type=password]').on('input change focus blur', function(e) {
-        if (jQuery(this).is(':focus') || !!e.target.value) {
-            jQuery(this).closest('.form-group').find('.inspect_pass').addClass('show');
-        } else {
-            jQuery(this).closest('.form-group').find('.inspect_pass').removeClass('show');
-        }
-    });
-
-    jQuery(document).on('mousedown', '[data-action="show_password"]', function() {
-        jQuery(this).closest('.form-group').find('input').attr('type', 'text');
-    });
-    jQuery(document).on('mouseup mouseout', '[data-action="show_password"]', function() {
-        jQuery(this).closest('.form-group').find('input').attr('type', 'password');
-    });
-
-    jQuery('form').on('change input', function(e) {
-        var $form = jQuery(this),
-            filled = true;
-
-        $form.find('input[type="text"], input[type="tel"], input[type="password"]').each(function() {
-            if (!this.value) {
-                filled = false;
-            }
-        });
-
-        $form.find('input[type="checkbox"]').each(function() {
-            if (!this.checked) {
-                filled = false;
-            }
-        });
-
-        $form.find('[type="submit"]').toggleClass('disabled', !filled);
-    });
 
     jQuery('#modal-form-code-recovery').on('input change blur', 'input', function(e) {
         var $input = jQuery(this);
@@ -130,12 +84,7 @@ jQuery(function() {
         });
     });
 
-    jQuery('.remodal').on('closed', function(e) {
-        jQuery('.remodal form')
-            .trigger('reset')
-            .find('input, select, textarea')
-            .trigger('change');
-    });
+
 
     var KEY_BACKSPACE = 8,
         KEY_TAB = 9,
@@ -218,15 +167,6 @@ jQuery(function() {
     jQuery('.remodal').on('opened', function(e) {
         jQuery(this).find('form input').eq(0).trigger('focus');
     });
-
-
-    function removeRemodalAnimation() {
-        jQuery('body').addClass('remodal-overlay-without-animation');
-
-        setTimeout(function() {
-            jQuery('body').removeClass('remodal-overlay-without-animation');
-        }, 1200);
-    }
 });
 
 

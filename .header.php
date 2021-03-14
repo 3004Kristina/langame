@@ -39,6 +39,15 @@
 <!--<div class="perfect">-->
 <!--    <img src="/img/searhc2560.png" alt="">-->
 <!--</div>-->
+
+<div class="system-svg-icons">
+    <svg viewBox="0 0 0 0" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <filter id="grayscale">
+            <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0"/>
+        </filter>
+    </svg>
+</div>
+
 <section class="wrapper">
     <header>
         <div class="header_wrapper">

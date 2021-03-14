@@ -1,8 +1,3 @@
-<?php if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && \mb_strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-    return;
-} ?>
-</section>
-</section>
 <div class="remodal main_problem_report_modal" data-remodal-id="problem_report_modal" data-remodal-options="hashTracking: false">
     <button data-remodal-action="close" class="remodal-close"></button>
     <div class="remodal-content">
@@ -10,12 +5,12 @@
         <div class="problem_report_form">
             <form id="modal-problem_report" action="" method="post">
                 <div class="forma">
-                    <textarea id="problem_report-text" name="user_problem" placeholder="" required></textarea>
+                    <textarea id="problem_report-text" name="user_problem" type="text" placeholder="" required></textarea>
                     <div class="symbol_counter_wrapper">
                         <span class="symbol_counter">0</span>
                         <span>/1000</span>
                     </div>
-                    <button type="submit" class="btn">Отправить</button>
+                    <button type="submit" class="btn disabled">Отправить</button>
                 </div>
             </form>
         </div>
@@ -26,11 +21,15 @@
     <button data-remodal-action="close" class="remodal-close"></button>
     <div class="remodal-content">
         <img src="/img/Solid.svg" alt="waiting">
-        <p class="waiting_modal_title"></p>
+        <p class="title">
+            Пожалуйста ожидайте, <br>
+            время начисляется!
+        </p>
     </div>
 </div>
 
 <div class="remodal main_finish_session_modal" data-remodal-id="finish_session_modal" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
     <div class="remodal-content">
         <p class="title">
             Вы хотите завершить сессию?
@@ -40,8 +39,8 @@
             все пользовательские данные будут стёрты
         </p>
         <div class="action_wrapper">
-            <a href="#" class="confirm" data-remodal-target="end_of_session_modal">Да, завершить</a>
-            <button data-remodal-action="close" class="remodal-close">Нет, ошибся</button>
+            <a href="#" class="confirm">Да, завершить</a>
+            <a href="#" class="reject">Нет, ошибся</a>
         </div>
     </div>
 </div>
@@ -57,28 +56,40 @@
         </p>
         <div class="begin_session_form">
             <form id="modal-begin_session" action="" method="post">
-                <input type="hidden" name="package">
-                <input type="hidden" name="time-qty">
                 <div class="forma">
                     <div class="checkbox_wrapper">
-                        <input type="checkbox" id="use_balance_begin_session" name="use_bonus" checked value="1">
+                        <input type="checkbox" id="use_balance_begin_session" checked>
                         <label for="use_balance_begin_session">
                             <span><img src="/img/Shape.svg" alt="check"></span>
                         </label>
                         <span class="agree_info">Использовать баллы</span>
                     </div>
-                    <div class="form-group" data-placeholder="Введите количество баллов" data-label="Количество баллов" data-disable-by-checkbox="#use_balance_begin_session">
-                        <label for="bonus-begin-session-input">
-                            <img src="/img/balans.svg" alt="password">
-                        </label>
-                        <input id="bonus-begin-session-input" name="bonus_qty" type="text" placeholder="" required>
-                        <div class="limit">Минимум <span>1</span>, максимум <span>12</span></div>
+                    <div class="bonus_info_wrapper">
+                        <div class="bonus_info_title">Количество балов</div>
+                        <div class="bonus_info">12</div>
                     </div>
+                    <div class="limit">Минимум <span>1</span>, максимум <span>12</span></div>
                     <div class="available_sum_wrapper">
                         <div class="available">Доступно: <span>100</span> руб. и <span>50</span> бонусов</div>
                         <div class="sum">Спишется: <span>50</span> руб. и <span>25</span> бонусов</div>
                     </div>
-                    <button type="submit" class="btn">Подтверждаю</button>
+                    <button type="submit" class="btn disabled">Подтверждаю</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="remodal main_balance_up_modal" data-remodal-id="balance_up_modal" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-content">
+        <p class="title">
+            Пополнение баланса
+        </p>
+        <div class="balance_up_form">
+            <form id="modal-balance_up" action="" method="post">
+                <div class="forma">
+                    <button type="submit" class="btn disabled">OK</button>
                 </div>
             </form>
         </div>
@@ -94,7 +105,7 @@
         <div class="prolongation_session_form">
             <form id="modal-prolongation_session" action="" method="post">
                 <div class="forma">
-                    <div class="form-group" data-placeholder="Введите пароль" data-label="Пароль">
+                    <div class="form-group" data-placeholder="Введите новый пароль" data-label="Пароль">
                         <label for="password-input">
                             <img src="/img/password.svg" alt="password">
                         </label>
@@ -111,21 +122,16 @@
                         </label>
                         <span class="agree_info">Использовать баллы</span>
                     </div>
-                    <div class="form-group"
-                         data-placeholder="Введите количество баллов"
-                         data-label="Количество баллов"
-                         data-disable-by-checkbox="#use_balance_prolongation_session">
-                        <label for="bonus-prolongation-session-input">
-                            <img src="/img/balans.svg" alt="password">
-                        </label>
-                        <input id="bonus-prolongation-session-input" name="bonus_qty" type="text" placeholder="" required>
-                        <div class="limit">Минимум <span>1</span>, максимум <span>12</span></div>
+                    <div class="bonus_info_wrapper">
+                        <div class="bonus_info_title">Количество балов</div>
+                        <div class="bonus_info">12</div>
                     </div>
+                    <div class="limit">Минимум <span>1</span>, максимум <span>12</span></div>
                     <div class="available_sum_wrapper">
                         <div class="available">Доступно: <span>100</span> руб. и <span>50</span> бонусов</div>
                         <div class="sum">Спишется: <span>50</span> руб. и <span>25</span> бонусов</div>
                     </div>
-                    <button type="submit" class="btn">Подтверждаю</button>
+                    <button type="submit" class="btn disabled">Подтверждаю</button>
                 </div>
             </form>
         </div>
@@ -144,7 +150,7 @@
                 <div class="forma">
                     <div class="checkbox_wrapper">
                         <label>
-                            <input type="radio" name="package" value="1" data-package="Произвольное время" data-price-per-minute="1.6666666666666" required>
+                            <input type="radio" name="package">
                             <div class="start_content">
                                 <span class="position">Произвольное время</span>
                                 <span class="price">1,67 руб/мин.</span>
@@ -153,55 +159,55 @@
                                 <p>Введите время в минутах. 1 час = 60 минут</p>
                                 <div class="qty">
                                     <span class="left"></span>
-                                    <input type="number" name="time-qty" value="10" step="1" min="10" disabled>
+                                    <input type="number" name="time-qty" value="10" step="10" min="10">
                                     <span class="right"></span>
                                 </div>
                             </div>
                         </label>
                         <label>
-                            <input type="radio" name="package" value="2" data-package="Пакет на 3 часа" data-price="270 ₽" required>
+                            <input type="radio" name="package">
                             <div class="start_content">
                                 <span class="position">Пакет на 3 часа</span>
                                 <span class="price">270 ₽</span>
                             </div>
                         </label>
                         <label>
-                            <input type="radio" name="package" value="3" data-package="Пакет на 5 часов" data-price="400 ₽" required>
+                            <input type="radio" name="package">
                             <div class="start_content">
                                 <span class="position">Пакет на 5 часов</span>
                                 <span class="price">400 ₽</span>
                             </div>
                         </label>
                         <label>
-                            <input type="radio" name="package" value="4" data-package="Пакет День (09:00 - 16:00)" data-price="450 ₽" required>
+                            <input type="radio" name="package">
                             <div class="start_content">
                                 <span class="position">Пакет День (09:00 - 16:00)</span>
                                 <span class="price">450 ₽</span>
                             </div>
                         </label>
                         <label>
-                            <input type="radio" name="package" value="5" data-package="Пакет Вечер (16:00-22:00)" data-price="450 ₽" required>
+                            <input type="radio" name="package">
                             <div class="start_content">
                                 <span class="position">Пакет Вечер (16:00-22:00)</span>
                                 <span class="price">450 ₽</span>
                             </div>
                         </label>
                         <label>
-                            <input type="radio" name="package" value="6" data-package="Пакет Ночь (22:00 - 08:00)" data-price="550 ₽" required>
+                            <input type="radio" name="package">
                             <div class="start_content">
                                 <span class="position">Пакет Ночь (22:00 - 08:00)</span>
                                 <span class="price">550 ₽</span>
                             </div>
                         </label>
                         <label>
-                            <input type="radio" name="package" value="7" data-package="Пакет Сутки 24ч" data-price="1400 ₽" required>
+                            <input type="radio" name="package">
                             <div class="start_content">
                                 <span class="position">Пакет Сутки 24ч</span>
                                 <span class="price">1400 ₽</span>
                             </div>
                         </label>
                     </div>
-                    <button type="submit" class="btn">Начать</button>
+                    <button type="submit" class="btn disabled">Начать</button>
                 </div>
             </form>
         </div>
@@ -247,41 +253,108 @@
                         Денежные средства на балансе<br>
                         возврату не подлежат!
                     </p>
-                    <button type="submit" class="btn">ок</button>
+                    <button type="submit" class="btn disabled">ок</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<div class="remodal main_success_modal" data-remodal-id="main_page_success_modal" data-remodal-options="hashTracking: false">
+
+<div class="remodal sign_in_forgot_password_modal" data-remodal-id="forgot_password_modal" data-remodal-options="hashTracking: false">
     <button data-remodal-action="close" class="remodal-close"></button>
     <div class="remodal-content">
-        <div class="image_wrapper">
-            <img src="/img/sucesses.svg" alt="done">
+        <p class="title">Забыли пароль</p>
+        <div class="forgot_password_form">
+            <form id="modal-form-forgot-password" action="" method="post">
+                <div class="forma">
+                    <div class="form-group" data-placeholder="Введите номер телефона" data-label="Номер телефона">
+                        <label for="telephone-input">
+                            <img src="/img/tel.svg" alt="phone">
+                        </label>
+                        <input id="modal-telephone-input" name="phone" type="tel" placeholder="" required>
+                    </div>
+
+                    <p class="instruction">
+                        Что бы восстановить пароль введите свой номер мобильного телефона.
+                    </p>
+                    <button type="submit" class="btn disabled">Напомнить</button>
+                </div>
+            </form>
         </div>
-        <p class="title">Успешно!</p>
     </div>
 </div>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=Intl.PluralRules,Intl.PluralRules.~locale.ru"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/promise-polyfill/8.2.0/polyfill.min.js"
-        integrity="sha512-YK+bAjUuYdjPksbGQIIIsUn5hgYFsc+nXgx21Wwby9Mv+rJd8WZH2FRe1RdlTjFu1vxlGia9/RqmUMcZtX+BrA=="
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-messageformat/9.0.2/intl-messageformat.min.js"
-        integrity="sha512-uGIOqaLIi8I30qAnPLfrEnecDDi08AcCrg7gzGp/XrDafLJl/NIilHwAm1Wl2FLiTSf10D5vM70108k3oMjK5Q=="
-        crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
-        integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.scrollbar/0.2.11/jquery.scrollbar.min.js"
-        integrity="sha512-5AcaBUUUU/lxSEeEcruOIghqABnXF8TWqdIDXBZ2SNEtrTGvD408W/ShtKZf0JNjQUfOiRBJP+yHk6Ab2eFw3Q=="
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.js"
-        integrity="sha512-a/KwXZUMuN0N2aqT/nuvYp6mg1zKg8OfvovbIlh4ByLw+BJ4sDrJwQM/iSOd567gx+yS0pQixA4EnxBlHgrL6A=="
-        crossorigin="anonymous"></script>
-<script src="/js/script.js?t=<?= time(); ?>"></script>
-<script src="/js/common.js?t=<?= time(); ?>"></script>
-</body>
-</html>
+
+<div class="remodal sign_in_code_recovery_modal" data-remodal-id="code_recovery_modal" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-content">
+        <p class="title">Код восстановления</p>
+        <p class="instruction">
+            Введите 4-значный код который был выслан
+            на Ваш номер телефона для завершения
+            процедуры восстановления пароля
+        </p>
+        <div class="code_recovery_form">
+            <form id="modal-form-code-recovery" action="" method="post">
+                <div class="forma">
+                    <div class="code_wrapper">
+                        <input type="text" name="code" required="required" maxlength="1" autofocus="">
+
+                        <input type="text" name="code" required="required" maxlength="1">
+
+                        <input type="text" name="code" required="required" maxlength="1">
+
+                        <input type="text" name="code" required="required" maxlength="1">
+                    </div>
+                    <a href="#" id="reSendCode" class="send_code_again disabled">Отправить код еще раз <span id="countdown"></span></a>
+                    <button type="submit" class="btn disabled">подтвердить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="remodal sign_in_set_new_password_modal" data-remodal-id="set_new_password_modal" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-content">
+        <p class="title">Восстановление пароля</p>
+        <div class="set_new_password_form">
+            <form id="modal-set-new-password" action="" method="post">
+                <div class="forma">
+                    <div class="form-group" data-placeholder="Введите новый пароль" data-label="Пароль">
+                        <label for="set-new-password-input">
+                            <img src="/img/password.svg" alt="password">
+                        </label>
+                        <input id="set-new-password-input" name="password" type="password" placeholder="" required>
+                        <span data-action="show_password" class="inspect_pass">показать</span>
+                    </div>
+                    <button type="submit" class="btn disabled">Восстановить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="remodal sign_in_computer_locked_modal" data-remodal-id="computer_locked_modal" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-content">
+        <p class="locked_title">Компьютер заблокирован</p>
+        <div class="img_wrapper">
+            <img src="/img/attention.svg" alt="attention">
+        </div>
+        <p class="instruction">
+            Для авторизации на данном ПК
+            обратитесь к администратору
+        </p>
+    </div>
+</div>
+
+<div class="remodal sign_in_success_modal" data-remodal-id="success_modal" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-content">
+        <p class="title">Успешно!</p>
+        <p class="instruction">
+            Ваш пароль был изменен, воспользуйтесь новым паролем для входа в систему.
+        </p>
+    </div>
+</div>

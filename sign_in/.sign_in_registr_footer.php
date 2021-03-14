@@ -53,7 +53,6 @@
         </div>
     </div>
 </div>
-
 <div class="remodal sign_in_forgot_password_modal" data-remodal-id="forgot_password_modal" data-remodal-options="hashTracking: false">
     <button data-remodal-action="close" class="remodal-close"></button>
     <div class="remodal-content">
@@ -67,11 +66,10 @@
                         </label>
                         <input id="modal-telephone-input" name="phone" type="tel" placeholder="" required>
                     </div>
-
                     <p class="instruction">
                         Что бы восстановить пароль введите свой номер мобильного телефона.
                     </p>
-                    <button type="submit" class="btn disabled">Напомнить</button>
+                    <button type="submit" class="btn">Напомнить</button>
                 </div>
             </form>
         </div>
@@ -100,7 +98,7 @@
                         <input type="text" name="code" required="required" maxlength="1">
                     </div>
                     <a href="#" id="reSendCode" class="send_code_again disabled">Отправить код еще раз <span id="countdown"></span></a>
-                    <button type="submit" class="btn disabled">подтвердить</button>
+                    <button type="submit" class="btn">подтвердить</button>
                 </div>
             </form>
         </div>
@@ -121,7 +119,7 @@
                         <input id="set-new-password-input" name="password" type="password" placeholder="" required>
                         <span data-action="show_password" class="inspect_pass">показать</span>
                     </div>
-                    <button type="submit" class="btn disabled">Восстановить</button>
+                    <button type="submit" class="btn">Восстановить</button>
                 </div>
             </form>
         </div>
@@ -151,7 +149,6 @@
         </p>
     </div>
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/promise-polyfill/8.2.0/polyfill.min.js"
         integrity="sha512-YK+bAjUuYdjPksbGQIIIsUn5hgYFsc+nXgx21Wwby9Mv+rJd8WZH2FRe1RdlTjFu1vxlGia9/RqmUMcZtX+BrA=="
         crossorigin="anonymous"></script>
@@ -170,5 +167,6 @@
         crossorigin="anonymous"></script>
 <script src="/js/script.js?t=<?= time(); ?>"></script>
 <script src="/js/signin_start.js?t=<?= time(); ?>"></script>
+<script src="/js/common.js?t=<?= time(); ?>"></script>
 </body>
 </html>

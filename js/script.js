@@ -1,6 +1,3 @@
-$(document).on('dragstart', 'img', function(event) {
-    event.preventDefault();
-});
 window.Layout = {
     initSlick: function() {
         if (!jQuery.fn.slick) {
@@ -111,6 +108,10 @@ jQuery(function() {
     Layout.init();
     Layout.activateUrlLinks(location.pathname);
     Layout.initAjaxUrlHandlers();
+
+    jQuery(document).on('dragstart', 'img', function(e) {
+        e.preventDefault();
+    });
 
     // Clock on auth page
     (function() {
@@ -255,13 +256,13 @@ jQuery(function() {
         }
     })();
 
-    jQuery('#modal-problem_report').on('submit', function(e) {
+    jQuery('#modal-prolongation_session').on('submit', function(e) {
         e.preventDefault();
 
         var $form = jQuery(this),
-            data = $form.serializeArray();
+            data = $form.serialize();
 
-            jQuery('body').addClass('remodal-content-loading');
+        jQuery('body').addClass('remodal-content-loading');
 
         jQuery.ajax({
             type: 'POST',
@@ -270,13 +271,125 @@ jQuery(function() {
             success: function() {
                 jQuery('body').removeClass('remodal-content-loading');
 
-                jQuery('[data-remodal-id="problem_report_modal"]').remodal().close();
+                removeRemodalAnimation();
+
+                showWaitingModal('Пожалуйста ожидайте,<br>время начисляется!');
+            }
+        });
+    });
+
+    jQuery('#modal-cash_in').on('submit', function(e) {
+        e.preventDefault();
+
+        var $form = jQuery(this),
+            data = $form.serialize();
+
+        jQuery('body').addClass('remodal-content-loading');
+
+        jQuery.ajax({
+            type: 'POST',
+            url: '',
+            data: data,
+            success: function() {
+                jQuery('body').removeClass('remodal-content-loading');
+
+                removeRemodalAnimation();
+
+                showWaitingModal('Пожалуйста ожидайте,<br>баланс пополняется!');
+            }
+        });
+    });
+
+    jQuery('#modal-start_session').on('submit', function(e) {
+        e.preventDefault();
+
+        var $form = jQuery(this),
+            $nextModal = jQuery('[data-remodal-id="begin_session_modal"]'),
+            $checkedPackage = $form.find('input[name="package"]:checked'),
+            packageName = $checkedPackage.data('package'),
+            price = $checkedPackage.data('price'),
+            title = packageName + ' стоимостью ' + price,
+            values = {
+                'package': $checkedPackage.val(),
+                'time-qty': $form.find('input[name="time-qty"]:not(:disabled)').val()
+            };
+
+        for (var name in values) {
+            $nextModal.find('input[type="hidden"][name="' + name + '"]').val(values[name]);
+        }
+
+        if ($checkedPackage.is('[data-price-per-minute]')) {
+            var minutesTotal = +values['time-qty'],
+                minutes = minutesTotal % 60,
+                hours = Math.floor(minutesTotal / 60),
+                priceNum = Math.ceil(+$checkedPackage.data('price-per-minute') * minutesTotal),
+                timeLabels = [];
+
+            if (hours > 0) {
+                timeLabels.push(formatter.hours(hours, 'v'));
+            }
+
+            if (minutes > 0) {
+                timeLabels.push(formatter.minutes(minutes, 'v'));
+            }
+
+            title = 'Пакет на ' + timeLabels.join(' ') + ' стоимостью ' + priceNum + ' руб.';
+        }
+
+        $nextModal.find('.service_package').text(title);
+
+        removeRemodalAnimation();
+
+        $nextModal.remodal().open();
+    });
+
+    jQuery('#modal-begin_session').on('submit', function(e) {
+        e.preventDefault();
+
+        var $form = jQuery(this),
+            data = $form.serialize();
+
+        jQuery('body').addClass('remodal-content-loading');
+
+        jQuery.ajax({
+            type: 'POST',
+            url: '',
+            data: data,
+            success: function() {
+                jQuery('body').removeClass('remodal-content-loading');
+
+                removeRemodalAnimation();
+
+                showWaitingModal('Пожалуйста ожидайте,<br>время начисляется!');
+            }
+        });
+    });
+
+    jQuery('#modal-problem_report').on('submit', function(e) {
+        e.preventDefault();
+
+        var $form = jQuery(this),
+            data = $form.serialize();
+
+        jQuery('body').addClass('remodal-content-loading');
+
+        jQuery.ajax({
+            type: 'POST',
+            url: '',
+            data: data,
+            success: function() {
+                jQuery('body').removeClass('remodal-content-loading');
+
+                removeRemodalAnimation();
+
+                jQuery('[data-remodal-id="main_page_success_modal"]').remodal().open();
+
                 jQuery('#modal-problem_report .symbol_counter').text('0');
             }
         });
     });
 
-    jQuery('#modal-problem_report textarea').on('input',function(){
+    jQuery('#modal-problem_report textarea').on('input', function() {
         var $this = jQuery(this),
             $symbol_counter = jQuery('#modal-problem_report .symbol_counter'),
             max = 1000,
@@ -286,34 +399,55 @@ jQuery(function() {
             $this.val($this.val().substr(0, max));
             $symbol_counter.text(max);
 
-        } else{
+        } else {
             $symbol_counter.text(len);
         }
     });
 
-    jQuery('.main_problem_report_modal').on('closed', function(e){
+    jQuery('.main_problem_report_modal').on('closed', function(e) {
         jQuery('.main_problem_report_modal .symbol_counter').text('0');
     });
 
-    jQuery('.remodal').on('closed', function(e) {
-        jQuery('.remodal form')
-            .trigger('reset')
-            .find('input, select, textarea')
-            .trigger('change');
-    });
+    jQuery('.main_start_session_modal .start_content').on('click', function(e) {
+        var $this = jQuery(this);
 
-    jQuery('.main_start_session_modal .start_content').on('click', function(e){
-        var $start_content = jQuery(this);
-
-        $start_content.closest('label').find('.select_time').slideDown();
+        $this.closest('label')
+            .find('.select_time')
+            .slideDown()
+            .find('input[type="number"]')
+            .prop('disabled', false);
 
         jQuery('.main_start_session_modal .start_content')
-            .not($start_content)
+            .not($this)
             .closest('label')
-            .find('.select_time').slideUp();
+            .find('.select_time')
+            .slideUp()
+            .find('input[type="number"]')
+            .prop('disabled', true);
     });
 
+    jQuery('.main_start_session_modal').on('closed', function(e) {
+        jQuery(this)
+            .find('.select_time')
+            .slideUp()
+            .find('input[type="number"]')
+            .prop('disabled', true);
+    });
 
+    jQuery('[data-disable-by-checkbox]').each(function() {
+        var $div = jQuery(this),
+            $checkbox = jQuery($div.data('disable-by-checkbox'));
+
+        $checkbox.on('change', function(e) {
+            $div.find('input').prop('disabled', !this.checked);
+
+            if (this.checked) {
+                $div.slideDown();
+            } else {
+                $div.slideUp();
+            }
+        });
+    });
 
     jQuery('.qty').each(function() {
         let $qty = jQuery(this),
@@ -335,10 +469,20 @@ jQuery(function() {
     });
 
     jQuery('#cash_in-input').mask('0 000 000', {reverse: true});
+    jQuery('#bonus-begin-session-input').mask('0 000 000', {reverse: true});
+    jQuery('#bonus-prolongation-session-input').mask('0 000 000', {reverse: true});
 
-    jQuery('.main_cash_in_modal [data-cash-in]').on('click', function(e){
+    jQuery('.main_cash_in_modal [data-cash-in]').on('click', function(e) {
         var $button = jQuery(this);
 
         jQuery('#cash_in-input').val('' + $button.data('cash-in')).trigger('change');
     });
+
+    function showWaitingModal(text) {
+        var waitingModal = jQuery('.main_waiting_modal');
+
+        waitingModal.find('.waiting_modal_title').html(text);
+
+        waitingModal.remodal().open();
+    }
 });
