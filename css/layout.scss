@@ -493,7 +493,7 @@ html, body {
                                 opacity: 0.7;
                             }
 
-                            &:active, &:focus {
+                            &:focus {
                                 img {
                                     animation-name: balance_update;
                                     animation-duration: 2s;
@@ -542,7 +542,7 @@ html, body {
                             p {
                                 margin: 0;
                                 font-style: normal;
-                                font-weight: 100;
+                                font-weight: 400;
                                 font-size: 9px;
                                 line-height: 12px;
                                 color: #000000;
@@ -742,7 +742,6 @@ html, body {
                 }
             }
         }
-
         /*! MAIN PAGE END */
 
         .other_page_top_wrapper {
@@ -1505,6 +1504,8 @@ html, body {
                                 img {
                                     display: block;
                                     transition: opacity 0.2s;
+                                    width: 32px;
+                                    height: 32px;
                                 }
 
                                 &:hover img {
@@ -2135,6 +2136,7 @@ html, body {
                                 img {
                                     display: block;
                                     width: 53px;
+                                    height: 53px;
                                     transition: opacity 0.2s;
                                 }
 
