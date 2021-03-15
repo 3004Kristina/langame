@@ -83,7 +83,7 @@
     </div>
     <div class="main_content_item_right">
         <div class="tariffs_info">
-            <div class="tariffs_info_title" data-remodal-target="start_session_modal">
+            <div class="tariffs_info_title">
                 Тарифы, доступные на данном ПК
             </div>
             <div class="tariffs_info_list">

@@ -1,7 +1,13 @@
 jQuery(function() {
     var forgotFormPasswordInterval;
 
+    jQuery('.main_prolongation_session_modal .forgot_password').on('click', function(e) {
+        e.preventDefault();
 
+        removeRemodalAnimation();
+
+        jQuery('[data-remodal-id="forgot_password_modal"]').remodal().open();
+    });
 
     jQuery('#modal-form-code-recovery').on('input change blur', 'input', function(e) {
         var $input = jQuery(this);
