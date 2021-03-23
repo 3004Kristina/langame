@@ -37,7 +37,7 @@
 </head>
 <body>
 <!--<div class="perfect">-->
-<!--    <img src="/img/searhc2560.png" alt="">-->
+<!--    <img src="/img/book.png" alt="">-->
 <!--</div>-->
 
 <div class="system-svg-icons">

@@ -20,7 +20,7 @@
                     <span data-action="show_password" class="inspect_pass">показать</span>
                 </div>
 
-                <button class="forgot_password" data-remodal-target="forgot_password_modal">Забыли пароль?</button>
+                <a href="#" class="forgot_password" data-remodal-target="forgot_password_modal">Забыли пароль?</a>
 
                 <button type="submit" class="btn sign_in_submit disabled">Войти</button>
             </div>
