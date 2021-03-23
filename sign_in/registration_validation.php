@@ -22,10 +22,11 @@
                         <input id="registr-telephone-input" name="phone" type="tel" placeholder="" required>
                         <span class="error" style="display: block">Поле должно содержать 11 цифр</span>
                     </div>
-                    <div class="form-group success" data-placeholder="Введите дату рождения" data-label="Дата рождения">
+                    <div class="form-group error" data-placeholder="Введите дату рождения" data-label="Дата рождения">
                         <label for="registr-birthday-input"></label>
                         <span class="registr_image"><img src="/img/Calendar.svg" alt="calendar"></span>
                         <input id="registr-birthday-input" name="birthday" type="text" placeholder="" required>
+                        <span class="error" style="display: block">Поле должно содержать 11 цифр fgfgfdhgf hgfhfghf hfghhghhgfhgh ghghgh</span>
                     </div>
                 </div>
                 <div class="form-group-list">
@@ -52,11 +53,10 @@
                             <span class="select_placeholder">Документ</span>
                         </div>
                     </div>
-                    <div class="form-group error" data-placeholder="Укажите 10 цифр серия и номер" data-label="Укажите 10 цифр серия и номер">
+                    <div class="form-group" data-placeholder="Укажите 10 цифр серия и номер" data-label="Укажите 10 цифр серия и номер">
                         <label for="registr-passport-input"></label>
                         <span class="registr_image"><img src="/img/transcript.svg" alt="passport"></span>
                         <input id="registr-passport-input" name="passport" type="text" placeholder="" required>
-                        <span class="error" style="display: block">Поле должно содержать 10 Символов</span>
                     </div>
                 </div>
                 <div class="form-group-list">
