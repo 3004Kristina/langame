@@ -240,11 +240,11 @@ html, body {
                             }
                         }
 
-                        &.error{
+                        &.error {
                             margin-top: -25px;
                             margin-bottom: 40px;
 
-                            .inspect_pass{
+                            .inspect_pass {
                                 bottom: 15px;
                                 right: 34px;
                             }
@@ -358,6 +358,7 @@ html, body {
             }
         }
     }
+
     /*! AUTHORIZATION PAGE END */
 
     /*! REGISTRATION PAGE START */
@@ -413,16 +414,13 @@ html, body {
                     color: #ffffff;
                     opacity: 1;
 
-                    &:after {
-                        content: '';
+                    img {
                         display: block;
                         position: absolute;
                         top: 11px;
                         right: 12px;
                         width: 14px;
                         height: 14px;
-                        background-image: url("../img/info_auto.svg");
-                        background-repeat: no-repeat;
                     }
                 }
 
@@ -727,7 +725,7 @@ html, body {
                                 border-radius: 9px;
                                 margin-bottom: 25px;
 
-                                & .inspect_pass{
+                                & .inspect_pass {
                                     bottom: 15px;
                                     right: 34px;
                                 }
@@ -762,7 +760,7 @@ html, body {
                                 border-radius: 9px;
                                 margin-bottom: 25px;
 
-                                & .inspect_pass{
+                                & .inspect_pass {
                                     bottom: 15px;
                                     right: 34px;
                                 }
@@ -910,6 +908,7 @@ html, body {
             margin-bottom: 155px;
         }
     }
+
     /*! REGISTRATION PAGE END */
 
     /*! FOOTER START */
@@ -1271,12 +1270,11 @@ html, body {
                     line-height: 1.2;
 
                     &.active {
-                        &:after {
+                        img {
                             top: 17px;
-                            right: 19px;
+                            right: 22px;
                             width: 19px;
                             height: 19px;
-                            background-size: contain;
                         }
                     }
                 }
@@ -1509,7 +1507,7 @@ html, body {
                                             top: 47px;
                                             right: 24px;
 
-                                            b{
+                                            b {
                                                 border-width: 7px 6px 0 6px;
                                             }
                                         }
@@ -1892,12 +1890,11 @@ html, body {
                     line-height: 1.2;
 
                     &.active {
-                        &:after {
-                            top: 26px;
-                            right: 29px;
+                        img {
+                            top: 25px;
+                            right: 31px;
                             width: 28px;
                             height: 28px;
-                            background-size: contain;
                         }
                     }
                 }
@@ -2083,6 +2080,7 @@ html, body {
 
                                 .select_wrapper {
                                     border-radius: 20px;
+
                                     span {
                                         &.icon {
                                             top: 63px;
@@ -2123,7 +2121,7 @@ html, body {
                                             top: 70px;
                                             right: 33px;
 
-                                            b{
+                                            b {
                                                 border-width: 12px 10px 0 10px;
                                             }
                                         }
@@ -2173,7 +2171,7 @@ html, body {
                                     width: 46px;
                                     height: 46px;
 
-                                    img{
+                                    img {
                                         width: 23px;
                                         height: 23px;
                                     }
@@ -2287,14 +2285,14 @@ html, body {
     }
 
     @media (min-width: 2560px) {
-        #reg_form .document-type.form-group-multi{
-            width: 400px!important;
+        #reg_form .document-type.form-group-multi {
+            width: 400px !important;
         }
     }
 
     @media (min-width: 3840px) {
-        #reg_form .document-type.form-group-multi{
-            width: 600px!important;
+        #reg_form .document-type.form-group-multi {
+            width: 600px !important;
         }
     }
 }

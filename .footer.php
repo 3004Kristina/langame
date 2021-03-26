@@ -49,6 +49,9 @@
 <div class="remodal main_begin_session_modal" data-remodal-id="begin_session_modal" data-remodal-options="hashTracking: false">
     <button data-remodal-action="close" class="remodal-close"></button>
     <div class="remodal-content">
+        <a href="#" class="step_back">
+            <img src="/img/back.svg" alt="arrow">
+        </a>
         <p class="title">
             Начало сесии
         </p>

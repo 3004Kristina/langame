@@ -4,8 +4,13 @@
         Регистрация
     </div>
     <div class="kind_of_registration_wrapper">
-        <a href="/sign_in/registration.php" class="active">Полная</a>
-        <a href="/sign_in/simple_registration.php">Упрощенная</a>
+        <a href="/sign_in/registration.php" class="active">
+            <span>Полная</span>
+            <img src="/img/info_auto.svg" alt="info">
+        </a>
+        <a href="/sign_in/simple_registration.php">
+            <span> Упрощенная</span>
+        </a>
     </div>
     <div class="registration_form_wrapper">
         <form action="" method="post" id="full-registration-form">
