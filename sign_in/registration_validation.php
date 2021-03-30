@@ -53,7 +53,7 @@
                             <span class="select_placeholder">Документ</span>
                         </div>
                     </div>
-                    <div class="form-group" data-placeholder="Укажите 10 цифр серия и номер" data-label="Укажите 10 цифр серия и номер">
+                    <div class="form-group error" data-placeholder="Укажите 10 цифр серия и номер" data-label="Укажите 10 цифр серия и номер">
                         <label for="registr-passport-input"></label>
                         <span class="registr_image"><img src="/img/transcript.svg" alt="passport"></span>
                         <input id="registr-passport-input" name="passport" type="text" placeholder="" required>
