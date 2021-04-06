@@ -1,6 +1,4 @@
 @import "modals.scss";
-@import "fonts/stylesheets.css";
-@import "fonts/Lato-new/lato.css";
 
 *, *:before, *:after {
     box-sizing: border-box;
@@ -680,7 +678,7 @@ html, body {
                                             box-shadow: none;
                                             background-color: #efefef;
                                             padding: 15px;
-                                            margin-top: -5px;
+                                            margin-top: -12px;
                                             border-radius: 0 0 8px 8px;
 
                                             .select2-results__option {
@@ -997,7 +995,7 @@ html, body {
                 line-height: 45px;
                 letter-spacing: 1.5px;
                 color: #000000;
-                margin-top: 5px;
+                margin-bottom: 4px;
             }
 
             #clock {

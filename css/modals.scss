@@ -963,7 +963,7 @@ html, body {
             justify-content: center;
             text-decoration: none;
             width: 168px;
-            padding: 16px 0 11px;
+            padding: 12px 0 11px;
             text-align: center;
             font-style: normal;
             font-weight: 900;
@@ -1774,6 +1774,10 @@ html, body {
                 }
             }
         }
+
+        .forgot_password{
+            font-size: 15px;
+        }
     }
 
     @media (min-width: 3840px) {
@@ -1863,6 +1867,10 @@ html, body {
                     }
                 }
             }
+        }
+
+        .forgot_password{
+            font-size: 23px;
         }
     }
 }
@@ -2314,7 +2322,6 @@ html, body {
                         align-items: center;
                         width: 75px;
                         height: 32px;
-                        padding-top: 5px;
                         border: 1px solid rgba(0, 0, 0, 0.2);
                         border-radius: 24px;
                         background: #ffffff;
@@ -2835,7 +2842,6 @@ body .remodal-wrapper {
             justify-content: center;
             text-decoration: none;
             width: 168px;
-            padding: 16px 0 12px;
             text-align: center;
             font-style: normal;
             font-weight: 900;

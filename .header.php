@@ -26,6 +26,7 @@
           integrity="sha512-jRxwiuoe3nt8lMSnOzNEuQ7ckDrLl31dwVYFWS6jklXQ6Nzl7b05rrWF9gjSxgOow5nFerdoN6CBB4gY5m5nDw=="
           crossorigin="anonymous"/>
     <link rel="stylesheet" href="/css/layout.css?t=<?= time(); ?>">
+    <link rel="stylesheet" href="/fonts/Lato/latofonts.css">
     <style>
         input::-ms-reveal,
         input::-ms-clear {
