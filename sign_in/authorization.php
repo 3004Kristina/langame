@@ -5,6 +5,37 @@
     </div>
     <div class="sign_in_form_wrapper">
         <form action="" method="post" id="authorization-form">
+            <div class="reservation">
+                <p>Ближайшие брони на этот ПК</p>
+                <div class="reservation_wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>С</th>
+                                <th>До</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="text_decor">16:00</span> 10.05.2021</td>
+                                <td><span class="text_decor">17:00</span> 10.05.2021</td>
+                            </tr>
+                            <tr>
+                                <td><span class="text_decor">16:00</span> 10.05.2021</td>
+                                <td><span class="text_decor">17:00</span> 10.05.2021</td>
+                            </tr>
+                            <tr>
+                                <td><span class="text_decor">16:00</span> 10.05.2021</td>
+                                <td><span class="text_decor">17:00</span> 10.05.2021</td>
+                            </tr>
+                            <tr>
+                                <td><span class="text_decor">16:00</span> 10.05.2021</td>
+                                <td><span class="text_decor">17:00</span> 10.05.2021</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div class="forma">
                 <div class="form-group" data-placeholder="Введите номер телефона" data-label="Номер телефона">
                     <label for="telephone-input">
@@ -25,6 +56,10 @@
                 <button type="submit" class="btn sign_in_submit disabled">Войти</button>
             </div>
         </form>
+        <div class="qr_code_wrapper">
+            <p>Авторизация по QR коду.</p>
+            <img src="/img/qr.png" alt="qr">
+        </div>
     </div>
     <div class="registration_wrapper">
         <p>Если у вас еще нет аккаунта?</p>

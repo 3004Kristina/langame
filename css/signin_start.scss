@@ -146,6 +146,7 @@ html, body {
         }
 
         .sign_in_form_wrapper {
+            position: relative;
             margin-top: 66px;
 
             form {
@@ -289,6 +290,97 @@ html, body {
                             pointer-events: none;
                         }
                     }
+                }
+
+                .reservation{
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    right: 100%;
+                    width: 355px;
+                    height: 100%;
+                    margin-right: 225px;
+
+                    p{
+                        margin: 0 0 20px;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 1;
+                        text-align: center;
+                        color: #000;
+                        letter-spacing: .5px;
+                    }
+
+                    .reservation_wrapper{
+                        border-radius: 20px;
+                        border: 1px solid rgba(0,0,0,.1);
+
+                        table {
+                            font-family: 'Lato', sans-serif;
+                            border-collapse: collapse;
+                            width: 100%;
+
+                            thead{
+                                border-bottom: 1px solid rgba(0,0,0,.1);
+
+                                tr{
+                                    th{
+                                        text-align: center;
+                                        padding: 15px;
+                                    }
+                                }
+                            }
+
+                            tbody{
+                                tr{
+                                    td {
+
+                                        text-align: center;
+                                        padding: 10px;
+                                    }
+                                }
+
+                                tr:last-child td{
+                                    padding: 10px 10px 25px;
+                                }
+
+                                tr:first-child td{
+                                    padding: 20px 10px 10px;
+                                }
+                            }
+                        }
+
+                        .text_decor{
+                            color: #dc0000;
+                        }
+                    }
+
+                }
+            }
+
+            .qr_code_wrapper{
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 100%;
+                width: 286px;
+                height: 100%;
+                margin-left: 225px;
+
+                p {
+                    margin: 0 0 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 1;
+                    text-align: center;
+                    color: #000000;
+                    letter-spacing: 0.5px;
+                }
+
+                img{
+                    width: 100%;
                 }
             }
         }
@@ -1040,6 +1132,39 @@ html, body {
         .sign_in_start_content {
             padding: 90px 0 0;
 
+            .sign_in_form_wrapper {
+                form {
+                    .reservation{
+                        top: 100px;
+                    }
+                }
+
+                .qr_code_wrapper{
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    left: 100%;
+                    width: 286px;
+                    height: 100%;
+                    margin-left: 225px;
+
+                    p {
+                        margin: 0 0 20px;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 1;
+                        text-align: center;
+                        color: #000000;
+                        letter-spacing: 0.5px;
+                    }
+
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+
             .registration_wrapper {
                 margin: 54px auto 57px;
             }
@@ -1199,6 +1324,16 @@ html, body {
                             width: 449px;
                             padding: 23px 0 20px;
                         }
+                    }
+                }
+
+                .qr_code_wrapper{
+                    width: 387px;
+                    margin-left: 300px;
+
+                    p {
+                        margin: 0 0 20px;
+                        font-size: 18px;
                     }
                 }
             }
@@ -1820,6 +1955,16 @@ html, body {
                             width: 669px;
                             padding: 34px 0 34px;
                         }
+                    }
+                }
+
+                .qr_code_wrapper{
+                    width: 580px;
+                    margin-left: 460px;
+
+                    p {
+                        margin: 0 0 40px;
+                        font-size: 28px;
                     }
                 }
             }
